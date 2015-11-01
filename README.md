@@ -1,3 +1,6 @@
+# This is a fork with changes I've made when the suite was a commercial product.
+It is also the base on which the Krypton OutlookGrid relies (https://kryptonoutlookgrid.codeplex.com/)
+
 # Krypton Suite of .NET WinForms Controls
 
 The Kryton Suite of .NET WinForms controls are now freely available for use in personal or commerical projects. I developed and sold them from my company Component Factory until 2014 when the lack sales meant that selling the controls no longer made sense.
