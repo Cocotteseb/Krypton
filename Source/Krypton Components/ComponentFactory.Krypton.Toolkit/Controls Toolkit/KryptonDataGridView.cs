@@ -1299,7 +1299,7 @@ namespace ComponentFactory.Krypton.Toolkit
                                         {
                                             // Find size needed to show header text fully
                                             Size prefSize = _renderer.RenderStandardContent.GetContentPreferredSize(layoutContext, _contentInherit, _shortTextValue,
-                                                                                                                    VisualOrientation.Top, state, false);
+                                                                                                                    VisualOrientation.Top, state, false, false);
 
                                             bool contentsFit = (prefSize.Width <= tempCellBounds.Width) &&
                                                                (prefSize.Height <= tempCellBounds.Height);
@@ -1314,13 +1314,13 @@ namespace ComponentFactory.Krypton.Toolkit
                                         // Find the correct layout for the header content
                                         using (IDisposable memento = _renderer.RenderStandardContent.LayoutContent(layoutContext, tempCellBounds,
                                                                                                                    _contentInherit, _shortTextValue,
-                                                                                                                   VisualOrientation.Top, state, false))
+                                                                                                                   VisualOrientation.Top, state, false, false))
                                         {
                                            // Perform actual drawing of the content
                                             _renderer.RenderStandardContent.DrawContent(renderContext, tempCellBounds,
                                                                                         _contentInherit, memento,
                                                                                         VisualOrientation.Top,
-                                                                                        state, false, true);
+                                                                                        state, false, false, true);
                                         }
                                     }
                                 }

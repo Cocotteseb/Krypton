@@ -429,6 +429,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 {
                     ViewDrawContent viewContent = (ViewDrawContent)child;
                     viewContent.DrawContentOnComposition = DrawCanvasOnComposition;
+                    viewContent.Glowing = viewContent.DrawContentOnComposition;
                 }
             
             // Let base class find preferred size of the children
@@ -495,6 +496,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     // Update the content accordingly
                     ViewDrawContent viewContent = (ViewDrawContent)child;
                     viewContent.DrawContentOnComposition = DrawCanvasOnComposition && !drawBackground;
+                    viewContent.Glowing = viewContent.DrawContentOnComposition;
                 }
 
 			// Let child elements layout

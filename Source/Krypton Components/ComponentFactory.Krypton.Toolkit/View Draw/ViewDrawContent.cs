@@ -36,6 +36,7 @@ namespace ComponentFactory.Krypton.Toolkit
         private bool _useMnemonic;
         private bool _drawOnComposition;
         private bool _testForFocusCues;
+        private bool _glowing;
 		#endregion
 
 		#region Identity
@@ -56,6 +57,32 @@ namespace ComponentFactory.Krypton.Toolkit
 
             // Default other state
             _drawOnComposition = false;
+            _glowing = false;
+            _testForFocusCues = false;
+        }
+
+        /// <summary>
+        /// Initialize a new instance of the ViewDrawContent class.
+        /// </summary>
+        /// <param name="paletteContent">Palette source for the content.</param>
+        /// <param name="values">Reference to actual content values.</param>
+        /// <param name="orientation">Visual orientation of the content.</param>
+        /// <param name="composition">Draw on composition.</param>
+        /// <param name="glowing">If composition, should glowing be drawn.</param>
+        public ViewDrawContent(IPaletteContent paletteContent,
+                               IContentValues values,
+                               VisualOrientation orientation,
+                               bool composition,
+                               bool glowing)
+        {
+            // Cache the starting values
+            _paletteContent = paletteContent;
+            _values = values;
+            _orientation = orientation;
+
+            // Default other state
+            _drawOnComposition = composition;
+            _glowing = glowing;
             _testForFocusCues = false;
         }
 
@@ -97,6 +124,17 @@ namespace ComponentFactory.Krypton.Toolkit
         {
             get { return _drawOnComposition; }
             set { _drawOnComposition = value; }
+        }
+        #endregion
+
+        #region Glowing
+        /// <summary>
+        /// Gets ans sets the glowing value.
+        /// </summary>
+        public bool Glowing
+        {
+            get { return _glowing; }
+            set { _glowing = value; }
         }
         #endregion
 
@@ -283,7 +321,8 @@ namespace ComponentFactory.Krypton.Toolkit
 																					           _values,
 																					           Orientation,
 																					           State,
-                                                                                               DrawContentOnComposition);
+                                                                                               DrawContentOnComposition,
+                                                                                               Glowing);
 			}
 
 			return preferredSize;
@@ -321,7 +360,8 @@ namespace ComponentFactory.Krypton.Toolkit
 																		        _values,
 																		        Orientation,
 																		        State,
-                                                                                DrawContentOnComposition);
+                                                                                DrawContentOnComposition,
+                                                                                Glowing);
 			}
         }
 		#endregion
@@ -344,13 +384,14 @@ namespace ComponentFactory.Krypton.Toolkit
                 bool allowFocusRect = (_testForFocusCues ? ShowFocusCues(context.Control) : true);
 
 				// Draw using memento returned from render layout
-				context.Renderer.RenderStandardContent.DrawContent(context, 
-														           ClientRectangle,
-														           _paletteContent, 
-														           _memento, 
-														           Orientation,
-														           State,
+                context.Renderer.RenderStandardContent.DrawContent(context,
+                                                                   ClientRectangle,
+                                                                   _paletteContent,
+                                                                   _memento,
+                                                                   Orientation,
+                                                                   State,
                                                                    DrawContentOnComposition,
+                                                                   Glowing,
                                                                    allowFocusRect);
 			}
 		}
@@ -369,5 +410,7 @@ namespace ComponentFactory.Krypton.Toolkit
             return (bool)_pi.GetValue(c, null);
         }
         #endregion
+
+    
     }
 }

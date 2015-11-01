@@ -128,10 +128,10 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <param name="context">Rendering context.</param>
         public override void RenderBefore(RenderContext context)
         {
-            _memento = context.Renderer.RenderRibbon.DrawRibbonBack(_ribbon.RibbonShape, 
-                                                                    context, 
-                                                                    ClientRectangle, 
-                                                                    PaletteState.Normal, 
+            _memento = context.Renderer.RenderRibbon.DrawRibbonBack(_ribbon.RibbonShape,
+                                                                    context,
+                                                                    ClientRectangle,
+                                                                    PaletteState.Normal,
                                                                     _ribbon.StateCommon.RibbonQATOverflow,
                                                                     VisualOrientation.Top,
                                                                     false,

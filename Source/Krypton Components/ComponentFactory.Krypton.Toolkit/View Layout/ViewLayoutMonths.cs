@@ -897,13 +897,13 @@ namespace ComponentFactory.Krypton.Toolkit
             _shortText = _dayMeasure;
 
             // Find sizes required for the different 
-            Size normalSize = context.Renderer.RenderStandardContent.GetContentPreferredSize(context, _calendar.StateNormal.Day.Content, this, VisualOrientation.Top, PaletteState.Normal, false);
-            Size disabledSize = context.Renderer.RenderStandardContent.GetContentPreferredSize(context, _calendar.StateDisabled.Day.Content, this, VisualOrientation.Top, PaletteState.Disabled, false);
-            Size trackingSize = context.Renderer.RenderStandardContent.GetContentPreferredSize(context, _calendar.StateTracking.Day.Content, this, VisualOrientation.Top, PaletteState.Disabled, false);
-            Size pressedSize = context.Renderer.RenderStandardContent.GetContentPreferredSize(context, _calendar.StatePressed.Day.Content, this, VisualOrientation.Top, PaletteState.Disabled, false);
-            Size checkedNormalSize = context.Renderer.RenderStandardContent.GetContentPreferredSize(context, _calendar.StateCheckedNormal.Day.Content, this, VisualOrientation.Top, PaletteState.Disabled, false);
-            Size checkedTrackingSize = context.Renderer.RenderStandardContent.GetContentPreferredSize(context, _calendar.StateCheckedTracking.Day.Content, this, VisualOrientation.Top, PaletteState.Disabled, false);
-            Size checkedPressedSize = context.Renderer.RenderStandardContent.GetContentPreferredSize(context, _calendar.StateCheckedPressed.Day.Content, this, VisualOrientation.Top, PaletteState.Disabled, false);
+            Size normalSize = context.Renderer.RenderStandardContent.GetContentPreferredSize(context, _calendar.StateNormal.Day.Content, this, VisualOrientation.Top, PaletteState.Normal, false,false);
+            Size disabledSize = context.Renderer.RenderStandardContent.GetContentPreferredSize(context, _calendar.StateDisabled.Day.Content, this, VisualOrientation.Top, PaletteState.Disabled, false,false);
+            Size trackingSize = context.Renderer.RenderStandardContent.GetContentPreferredSize(context, _calendar.StateTracking.Day.Content, this, VisualOrientation.Top, PaletteState.Disabled, false, false);
+            Size pressedSize = context.Renderer.RenderStandardContent.GetContentPreferredSize(context, _calendar.StatePressed.Day.Content, this, VisualOrientation.Top, PaletteState.Disabled, false, false);
+            Size checkedNormalSize = context.Renderer.RenderStandardContent.GetContentPreferredSize(context, _calendar.StateCheckedNormal.Day.Content, this, VisualOrientation.Top, PaletteState.Disabled, false, false);
+            Size checkedTrackingSize = context.Renderer.RenderStandardContent.GetContentPreferredSize(context, _calendar.StateCheckedTracking.Day.Content, this, VisualOrientation.Top, PaletteState.Disabled, false, false);
+            Size checkedPressedSize = context.Renderer.RenderStandardContent.GetContentPreferredSize(context, _calendar.StateCheckedPressed.Day.Content, this, VisualOrientation.Top, PaletteState.Disabled, false, false);
 
             // Find largest size required
             normalSize.Width = Math.Max(normalSize.Width, Math.Max(disabledSize.Width, Math.Max(trackingSize.Width, Math.Max(pressedSize.Width, Math.Max(checkedNormalSize.Width, Math.Max(checkedTrackingSize.Width, checkedPressedSize.Width))))));
@@ -917,14 +917,14 @@ namespace ComponentFactory.Krypton.Toolkit
             _shortText = "A";
 
             // Find sizes required for the different 
-            Size shortNormalSize = context.Renderer.RenderStandardContent.GetContentPreferredSize(context, _calendar.StateNormal.DayOfWeek.Content, this, VisualOrientation.Top, PaletteState.Normal, false);
-            Size shortDisabledSize = context.Renderer.RenderStandardContent.GetContentPreferredSize(context, _calendar.StateDisabled.DayOfWeek.Content, this, VisualOrientation.Top, PaletteState.Disabled, false);
+            Size shortNormalSize = context.Renderer.RenderStandardContent.GetContentPreferredSize(context, _calendar.StateNormal.DayOfWeek.Content, this, VisualOrientation.Top, PaletteState.Normal, false,false);
+            Size shortDisabledSize = context.Renderer.RenderStandardContent.GetContentPreferredSize(context, _calendar.StateDisabled.DayOfWeek.Content, this, VisualOrientation.Top, PaletteState.Disabled, false,false);
 
             _shortText = "A" + _dayOfWeekMeasure;
 
             // Find sizes required for the different 
-            Size fullNormalSize = context.Renderer.RenderStandardContent.GetContentPreferredSize(context, _calendar.StateNormal.DayOfWeek.Content, this, VisualOrientation.Top,  PaletteState.Normal, false);
-            Size fullDisabledSize = context.Renderer.RenderStandardContent.GetContentPreferredSize(context, _calendar.StateDisabled.DayOfWeek.Content, this, VisualOrientation.Top, PaletteState.Disabled, false);
+            Size fullNormalSize = context.Renderer.RenderStandardContent.GetContentPreferredSize(context, _calendar.StateNormal.DayOfWeek.Content, this, VisualOrientation.Top,  PaletteState.Normal, false, false);
+            Size fullDisabledSize = context.Renderer.RenderStandardContent.GetContentPreferredSize(context, _calendar.StateDisabled.DayOfWeek.Content, this, VisualOrientation.Top, PaletteState.Disabled, false, false);
 
             // Find largest size required (subtract a fudge factor of 3 pixels as Graphics.MeasureString is always too big)
             fullNormalSize.Width = Math.Max(fullNormalSize.Width - shortNormalSize.Width - 3, fullDisabledSize.Width - shortDisabledSize.Width - 3);
