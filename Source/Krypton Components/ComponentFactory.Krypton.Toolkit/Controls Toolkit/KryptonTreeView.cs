@@ -1984,27 +1984,30 @@ namespace ComponentFactory.Krypton.Toolkit
         #region Implementation
         private void UpdateItemHeight()
         {
-            UpdateContentFromNode(null);
-
-            // Ask the view element to layout in given space, needs this before a render call
-            using (ViewLayoutContext context = new ViewLayoutContext(this, Renderer))
+            if (!IsDisposed && !Disposing)
             {
-                // For calculating the item height we always assume normal state
-                _drawButton.ElementState = PaletteState.Normal;
+                UpdateContentFromNode(null);
 
-                // Find required size to show a node (only interested in the height)
-                Size size = _drawButton.GetPreferredSize(context);
-                size.Height = size.Height + 1;
-
-                // If we have images defined then adjust to reflect image height
-                if (ImageList != null)
-                    size.Height = Math.Max(size.Height, ImageList.ImageSize.Height);
-
-                // Update the item height to match height of a single node
-                if (size.Height != ItemHeight)
+                // Ask the view element to layout in given space, needs this before a render call
+                using (ViewLayoutContext context = new ViewLayoutContext(this, Renderer))
                 {
-                    if (_itemHeightDefault)
-                        _treeView.ItemHeight = size.Height;
+                    // For calculating the item height we always assume normal state
+                    _drawButton.ElementState = PaletteState.Normal;
+
+                    // Find required size to show a node (only interested in the height)
+                    Size size = _drawButton.GetPreferredSize(context);
+                    size.Height = size.Height + 1;
+
+                    // If we have images defined then adjust to reflect image height
+                    if (ImageList != null)
+                        size.Height = Math.Max(size.Height, ImageList.ImageSize.Height);
+
+                    // Update the item height to match height of a single node
+                    if (size.Height != ItemHeight)
+                    {
+                        if (_itemHeightDefault)
+                            _treeView.ItemHeight = size.Height;
+                    }
                 }
             }
         }
