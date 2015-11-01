@@ -47,6 +47,9 @@ namespace ComponentFactory.Krypton.Workspace
         private bool _setVisible;
         private bool _allowResizing;
         private bool _events;
+        //seb
+        private bool _allowDroppingPages;
+        //end seb
         #endregion
 
         #region Events
@@ -86,6 +89,9 @@ namespace ComponentFactory.Krypton.Workspace
             _starSize = new StarSize(starSize);
             _allowResizing = true;
             _uniqueName = CommonHelper.UniqueString;
+            //seb
+            _allowDroppingPages = true;
+            //end seb
 
             // We need to know when the set of pages has changed
             Pages.Cleared += new EventHandler(OnPagesChanged);
@@ -358,6 +364,25 @@ namespace ComponentFactory.Krypton.Workspace
                 }
             }
         }
+
+        //seb
+        /// <summary>
+        /// Determines if the user can can drop pages in this workspace cell.
+        /// </summary>
+        [Category("Visuals")]
+        [Description("Determines if the user can can drop pages in this workspace cell.")]
+        [DefaultValue(true)]
+        public bool AllowDroppingPages
+        {
+            get { return _allowDroppingPages; }
+
+            set
+            {
+                _allowDroppingPages = value;
+                OnPropertyChanged("DroppingPages");
+            }
+        }
+        //end seb
 
         /// <summary>
         /// Star notation the describes the sizing of the workspace item.
