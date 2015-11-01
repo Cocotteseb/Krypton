@@ -22,9 +22,9 @@ using Microsoft.Win32;
 namespace ComponentFactory.Krypton.Toolkit
 {
 	/// <summary>
-	/// Provides a base for Office 2010 palettes.
+	/// Provides a base for Office 2013 palettes.
 	/// </summary>
-	public abstract class PaletteOffice2010Base : PaletteBase
+	public abstract class PaletteOffice2013Base : PaletteBase
     {
 		#region Static Fields
         private static readonly Padding _contentPaddingGrid = new Padding(2, 1, 2, 1);
@@ -125,28 +125,28 @@ namespace ComponentFactory.Krypton.Toolkit
         private static readonly Color[] _appButtonTrack = new Color[] { Color.FromArgb(255, 251, 230), Color.FromArgb(248, 230, 143), Color.FromArgb(238, 213, 126), Color.FromArgb(254, 247, 129), Color.FromArgb(240, 201, 41) };
         private static readonly Color[] _appButtonPressed = new Color[] { Color.FromArgb(235, 227, 196), Color.FromArgb(228, 198, 149), Color.FromArgb(166, 97, 7), Color.FromArgb(242, 155, 57), Color.FromArgb(236, 136, 9) };
         private static readonly Color[] _buttonBorderColors = new Color[]{ Color.FromArgb(180, 180, 180), // Button, Disabled, Border
-                                                                           Color.FromArgb(237, 201, 88),  // Button, Tracking, Border 1
-                                                                           Color.FromArgb(243, 213, 73),  // Button, Tracking, Border 2
-                                                                           Color.FromArgb(194, 118, 43),  // Button, Pressed, Border 1
-                                                                           Color.FromArgb(194, 158, 71),  // Button, Pressed, Border 2
-                                                                           Color.FromArgb(194, 138, 48),  // Button, Checked, Border 1
-                                                                           Color.FromArgb(194, 164, 77)   // Button, Checked, Border 2
+                                                                           Color.FromArgb(205, 230, 247),  // Button, Tracking, Border 1
+                                                                           Color.FromArgb(205, 230, 247),  // Button, Tracking, Border 2
+                                                                           Color.FromArgb(146, 192, 244),  // Button, Pressed, Border 1
+                                                                           Color.FromArgb(146, 192, 244),  // Button, Pressed, Border 2
+                                                                           Color.FromArgb(146, 192, 244),  // Button, Checked, Border 1
+                                                                           Color.FromArgb(146, 192, 244)   // Button, Checked, Border 2
                                                                          };
         private static readonly Color[] _buttonBackColors = new Color[]{ Color.FromArgb(250, 250, 250), // Button, Disabled, Back 1
                                                                          Color.FromArgb(250, 250, 250), // Button, Disabled, Back 2
-                                                                         Color.FromArgb(248, 225, 135), // Button, Tracking, Back 1
-                                                                         Color.FromArgb(251, 248, 224), // Button, Tracking, Back 2
-                                                                         Color.FromArgb(255, 228, 138), // Button, Pressed, Back 1
-                                                                         Color.FromArgb(194, 118, 43),  // Button, Pressed, Back 2
-                                                                         Color.FromArgb(255, 216, 108), // Button, Checked, Back 1
-                                                                         Color.FromArgb(255, 244, 128), // Button, Checked, Back 2
+                                                                          Color.FromArgb(205, 230, 247), // Button, Tracking, Back 1
+                                                                         Color.FromArgb(205, 230, 247), // Button, Tracking, Back 2
+                                                                         Color.FromArgb(146, 192, 244), // Button, Pressed, Back 1
+                                                                         Color.FromArgb(146, 192, 244), // Button, Pressed, Back 2
+                                                                         Color.FromArgb(146, 192, 244), // Button, Checked, Back 1
+                                                                         Color.FromArgb(146, 192, 244), // Button, Checked, Back 2
                                                                          Color.FromArgb(255, 225, 104), // Button, Checked Tracking, Back 1
                                                                          Color.FromArgb(255, 249, 196)  // Button, Checked Tracking, Back 2
                                                                        };
         #endregion
 
 		#region Instance Fields
-        private KryptonColorTable2010 _table;
+        private KryptonColorTable2013 _table;
         private Color[] _ribbonColors;
         private Color[] _trackBarColors;
         private ImageList _checkBoxList;
@@ -171,6 +171,9 @@ namespace ComponentFactory.Krypton.Toolkit
         private Font _boldFont;
         private Font _italicFont;
         private string _baseFontName;
+
+        //TODO rendre dynamique
+        //public static Color baseUserColor = Color.FromArgb(255, 248, 56);
         #endregion
 
 		#region Identity
@@ -182,7 +185,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="galleryButtonList">List of images for gallery buttons.</param>
         /// <param name="radioButtonArray">Array of images for radio button.</param>
         /// <param name="trackBarColors">Array of track bar specific colors.</param>
-        public PaletteOffice2010Base(Color[] schemeColors,
+        public PaletteOffice2013Base(Color[] schemeColors,
                                      ImageList checkBoxList,
                                      ImageList galleryButtonList,
                                      Image[] radioButtonArray,
@@ -224,7 +227,7 @@ namespace ComponentFactory.Krypton.Toolkit
         public override IRenderer GetRenderer()
         {
             // We always want the professional renderer
-            return KryptonManager.RenderOffice2010;
+            return KryptonManager.RenderOffice2013;
         }
         #endregion
 
@@ -3105,14 +3108,14 @@ namespace ComponentFactory.Krypton.Toolkit
                 case PaletteBorderStyle.ButtonCustom3:
                 case PaletteBorderStyle.ContextMenuOuter:
                 case PaletteBorderStyle.ContextMenuItemHighlight:
-                    return 2;
+                    return 0; //Changed 2013
                 case PaletteBorderStyle.ControlRibbon:
                 case PaletteBorderStyle.ControlRibbonAppMenu:
                 case PaletteBorderStyle.ControlGroupBox:
                     return 3;
                 case PaletteBorderStyle.FormMain:
                 case PaletteBorderStyle.FormCustom1:
-                    return 5;
+                    return 0; //Changed 2013
                 default:
 					throw new ArgumentOutOfRangeException("style");
 			}
@@ -7508,7 +7511,6 @@ namespace ComponentFactory.Krypton.Toolkit
             else
                 return _treeExpandWhite;
         }
-
         /// <summary>
         /// Gets a check box image appropriate for the provided state.
         /// </summary>
@@ -8104,7 +8106,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <returns>Ribbon shape value.</returns>
         public override PaletteRibbonShape GetRibbonShape()
         {
-            return PaletteRibbonShape.Office2010;
+            return PaletteRibbonShape.Office2013;
         }
 
         /// <summary>
@@ -9237,7 +9239,7 @@ namespace ComponentFactory.Krypton.Toolkit
             get 
             {
                 if (_table == null)
-                    _table = new KryptonColorTable2010(_ribbonColors, InheritBool.True, this);
+                    _table = new KryptonColorTable2013(_ribbonColors, InheritBool.True, this);
 
                 return _table;
             }

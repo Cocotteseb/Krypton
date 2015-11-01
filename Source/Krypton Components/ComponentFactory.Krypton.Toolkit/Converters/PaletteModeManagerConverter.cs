@@ -27,6 +27,7 @@ namespace ComponentFactory.Krypton.Toolkit
                                              new Pair(PaletteModeManager.Office2010Blue,        "Office 2010 - Blue"),
                                              new Pair(PaletteModeManager.Office2010Silver,      "Office 2010 - Silver"),
                                              new Pair(PaletteModeManager.Office2010Black,       "Office 2010 - Black"),
+                                             new Pair(PaletteModeManager.Office2013White,       "Office 2013 - White"),
                                              new Pair(PaletteModeManager.SparkleBlue,           "Sparkle - Blue"),
                                              new Pair(PaletteModeManager.SparkleOrange,         "Sparkle - Orange"),
                                              new Pair(PaletteModeManager.SparklePurple,         "Sparkle - Purple")};

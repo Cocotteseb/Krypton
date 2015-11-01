@@ -57,10 +57,12 @@ namespace ComponentFactory.Krypton.Toolkit
         private static PaletteSparkleBlue _paletteSparkleBlue;
         private static PaletteSparkleOrange _paletteSparkleOrange;
         private static PaletteSparklePurple _paletteSparklePurple;
+        private static PaletteOffice2013White _paletteOffice2013White;
         private static RenderStandard _renderStandard;
         private static RenderProfessional _renderProfessional;
         private static RenderOffice2007 _renderOffice2007;
         private static RenderOffice2010 _renderOffice2010;
+        private static RenderOffice2013 _renderOffice2013;
         private static RenderSparkle _renderSparkle;
         #endregion
 
@@ -435,6 +437,8 @@ namespace ComponentFactory.Krypton.Toolkit
                         return PaletteSparkleOrange;
                     case PaletteModeManager.SparklePurple:
                         return PaletteSparklePurple;
+                    case PaletteModeManager.Office2013White:
+                        return PaletteOffice2013White;
                     case PaletteModeManager.Custom:
                         return _globalPalette;
                     default:
@@ -475,6 +479,8 @@ namespace ComponentFactory.Krypton.Toolkit
                     return PaletteSparkleOrange;
                 case PaletteMode.SparklePurple:
                     return PaletteSparklePurple;
+                case PaletteMode.Office2013White:
+                    return PaletteOffice2013White;
                 case PaletteMode.Global:
                     return CurrentGlobalPalette;
                 case PaletteMode.Custom:
@@ -639,6 +645,20 @@ namespace ComponentFactory.Krypton.Toolkit
         }
 
         /// <summary>
+        /// Gets the single instance of the Office 2013 palette.
+        /// </summary>
+        public static PaletteOffice2013White PaletteOffice2013White
+        {
+            get
+            {
+                if (_paletteOffice2013White == null)
+                    _paletteOffice2013White = new PaletteOffice2013White();
+
+                return _paletteOffice2013White;
+            }
+        }
+
+        /// <summary>
         /// Gets the implementation for the requested renderer mode.
         /// </summary>
         /// <param name="mode">Requested renderer mode.</param>
@@ -703,6 +723,20 @@ namespace ComponentFactory.Krypton.Toolkit
                     _renderOffice2010 = new RenderOffice2010();
 
                 return _renderOffice2010;
+            }
+        }
+
+        /// <summary>
+        /// Gets the single instance of the Office 2013 renderer.
+        /// </summary>
+        public static RenderOffice2013 RenderOffice2013
+        {
+            get
+            {
+                if (_renderOffice2013 == null)
+                    _renderOffice2013 = new RenderOffice2013();
+
+                return _renderOffice2013;
             }
         }
 
@@ -831,6 +865,9 @@ namespace ComponentFactory.Krypton.Toolkit
 
             if (_paletteSparklePurple != null)
                 _paletteSparklePurple.UserPreferenceChanged();
+
+            if (_paletteOffice2013White != null)
+                _paletteOffice2013White.UserPreferenceChanged();
 
             UpdateToolStripManager();
         }
