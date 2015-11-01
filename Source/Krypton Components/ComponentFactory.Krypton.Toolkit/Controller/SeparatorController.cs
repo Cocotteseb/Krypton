@@ -559,6 +559,7 @@ namespace ComponentFactory.Krypton.Toolkit
             return _source.SeparatorControl.RectangleToScreen(splitRectangle);
         }
 
+        [SecuritySafeCritical]
         private void RegisterFilter()
         {
             if (_filter == null)
@@ -590,6 +591,7 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Implementation Static
+        [SecuritySafeCritical]
         private static void DrawSplitIndicator(Rectangle drawRect)
         {
             // We just perform a simple reversible rectangle draw
@@ -623,7 +625,8 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         /// <param name="m">The message to be dispatched.</param>
         /// <returns>true to filter the message and stop it from being dispatched.</returns>
-        [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
+        //[SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
+        [SecuritySafeCritical]
         public bool PreFilterMessage(ref Message m)
         {
             // We are only interested in filtering when moving the separator

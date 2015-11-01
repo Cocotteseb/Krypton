@@ -471,7 +471,8 @@ namespace ComponentFactory.Krypton.Docking
 		/// </summary>
 		/// <param name="msg">The message to be dispatched. You cannot modify this message. </param>
 		/// <returns>true to filter out; false otherwise.</returns>
-        [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
+		//[SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
+		[SecuritySafeCritical]
         public bool PreFilterMessage(ref Message msg)
         {
             Form parentForm = this.FindForm();

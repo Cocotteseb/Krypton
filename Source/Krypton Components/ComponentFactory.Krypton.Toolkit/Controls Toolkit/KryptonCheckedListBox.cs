@@ -20,6 +20,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Reflection;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -530,6 +531,7 @@ namespace ComponentFactory.Krypton.Toolkit
             #endregion
 
             #region Identity
+            [SecuritySafeCritical]
             static InternalCheckedListBox()
             {
                 LBC_GETCHECKSTATE = PI.RegisterWindowMessage("LBC_GETCHECKSTATE");
@@ -540,6 +542,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// Initialize a new instance of the InternalCheckedListBox class.
             /// </summary>
             /// <param name="kryptonCheckedListBox">Reference to owning control.</param>
+            [SecuritySafeCritical]
             public InternalCheckedListBox(KryptonCheckedListBox kryptonCheckedListBox)
             {
                 SetStyle(ControlStyles.ResizeRedraw, true);
@@ -567,6 +570,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// Releases all resources used by the Control. 
             /// </summary>
             /// <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+            [SecuritySafeCritical]
             protected override void Dispose(bool disposing)
             {
                 base.Dispose(disposing);
@@ -705,6 +709,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// Process Windows-based messages.
             /// </summary>
             /// <param name="m">A Windows-based message.</param>
+            [SecuritySafeCritical]
             protected override void WndProc(ref Message m)
             {
                 if (m.Msg == LBC_GETCHECKSTATE)
@@ -797,6 +802,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.
             /// </summary>
             /// <param name="m">The Message the top-level window sent to the InternalCheckedListBox control.</param>
+            [SecuritySafeCritical]
             protected override void WmReflectCommand(ref Message m)
             {
                 switch (PI.HIWORD((int)m.WParam.ToInt64()))
@@ -921,6 +927,7 @@ namespace ComponentFactory.Krypton.Toolkit
             #endregion
 
             #region Private
+            [SecuritySafeCritical]
             private void WmPaint(ref Message m)
             {
                 IntPtr hdc;
@@ -998,6 +1005,7 @@ namespace ComponentFactory.Krypton.Toolkit
                     PI.EndPaint(Handle, ref ps);
             }
 
+            [SecuritySafeCritical]
             private void WmKeyDown(ref Message m)
             {
                 switch ((int)m.WParam.ToInt64())
@@ -1199,6 +1207,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <summary>
         /// Initialize a new instance of the KryptonCheckedListBox class.
         /// </summary>
+        [SecuritySafeCritical]
         public KryptonCheckedListBox()
         {
             // Contains another control and needs marking as such for validation to work
@@ -1307,6 +1316,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// Releases all resources used by the Control. 
         /// </summary>
         /// <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+        [SecuritySafeCritical]
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -2535,6 +2545,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 return _stateDisabled;
         }
 
+        [SecuritySafeCritical]
         private void OnListBoxDrawItem(object sender, DrawItemEventArgs e)
         {
             // We cannot do anything with an invalid index
@@ -2766,6 +2777,7 @@ namespace ComponentFactory.Krypton.Toolkit
             OnValidating(e);
         }
 
+        [SecuritySafeCritical]
         private void OnListBoxPreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             OnPreviewKeyDown(e);

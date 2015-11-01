@@ -15,6 +15,7 @@ using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Navigator
 {
@@ -68,6 +69,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <summary>
         /// Show the window without taking activation.
         /// </summary>
+        [SecuritySafeCritical]
         public void ShowWithoutActivate()
         {
             // Show the window without activating it (i.e. do not take focus)
@@ -113,6 +115,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// Processes Windows messages.
         /// </summary>
         /// <param name="m">The Windows Message to process. </param>
+        [SecuritySafeCritical]
         protected override void WndProc(ref Message m)
         {
             // We are a transparent window, so mouse is never over us

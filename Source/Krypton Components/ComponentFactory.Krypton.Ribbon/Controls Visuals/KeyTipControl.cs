@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Collections.Generic;
 using ComponentFactory.Krypton.Toolkit;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Ribbon
 {
@@ -124,6 +125,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// Process the incoming key as being pressed.
         /// </summary>
         /// <param name="key">Key data.</param>
+        [SecuritySafeCritical]
         public void AppendKeyPress(char key)
         {
             // We only use uppercase characters
@@ -181,6 +183,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// </summary>
         protected override CreateParams CreateParams
         {
+            [SecuritySafeCritical]
             get
             {
                 CreateParams cp = base.CreateParams;
@@ -257,6 +260,7 @@ namespace ComponentFactory.Krypton.Ribbon
             redrawTimer.Start();
         }
 
+        [SecuritySafeCritical]
         private void OnRedrawTick(object sender, EventArgs e)
         {
             Timer redrawTimer = (Timer)sender;

@@ -20,6 +20,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Collections.Generic;
 using Microsoft.Win32;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -83,6 +84,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// Show the popup using the provided rectangle as the screen rect.
         /// </summary>
         /// <param name="screenRect">Screen rectangle for showing the popup.</param>
+        [SecuritySafeCritical]
         public virtual void Show(Rectangle screenRect)
 		{
             // Offset by the width/height of the shadow
@@ -126,6 +128,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         protected override CreateParams CreateParams
         {
+            [SecuritySafeCritical]
             get
             {
                 CreateParams cp = base.CreateParams;

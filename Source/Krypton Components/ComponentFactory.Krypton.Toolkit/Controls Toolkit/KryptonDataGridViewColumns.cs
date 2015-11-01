@@ -25,6 +25,7 @@ using System.Reflection;
 using System.Globalization;
 using System.Threading;
 using Microsoft.Win32;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -742,6 +743,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// A few keyboard messages need to be forwarded to the inner textbox of the
         /// KryptonNumericUpDown control so that the first character pressed appears in it.
         /// </summary>
+        [SecuritySafeCritical]
         protected override bool ProcessKeyEventArgs(ref Message m)
         {
             TextBox textBox = Controls[0] as TextBox;
@@ -3246,6 +3248,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// to decide whether a keystroke must start an editing session or not. In this case, a new session is started when
         /// a digit or negative sign key is hit.
         /// </summary>
+        [SecuritySafeCritical]
         public override bool KeyEntersEditMode(KeyEventArgs e)
         {
             NumberFormatInfo numberFormatInfo = CultureInfo.CurrentCulture.NumberFormat;
@@ -3759,6 +3762,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// A few keyboard messages need to be forwarded to the inner textbox of the
         /// KryptonNumericUpDown control so that the first character pressed appears in it.
         /// </summary>
+        [SecuritySafeCritical]
         protected override bool ProcessKeyEventArgs(ref Message m)
         {
             TextBox textBox = Controls[0].Controls[1] as TextBox;
@@ -4390,6 +4394,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// A few keyboard messages need to be forwarded to the inner textbox of the
         /// KryptonNumericUpDown control so that the first character pressed appears in it.
         /// </summary>
+        [SecuritySafeCritical]
         protected override bool ProcessKeyEventArgs(ref Message m)
         {
             TextBox textBox = Controls[0].Controls[1] as TextBox;
@@ -5559,6 +5564,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// A few keyboard messages need to be forwarded to the inner textbox of the
         /// KryptonComboBox control so that the first character pressed appears in it.
         /// </summary>
+        [SecuritySafeCritical]
         protected override bool ProcessKeyEventArgs(ref Message m)
         {
             return base.ProcessKeyEventArgs(ref m);
@@ -9370,6 +9376,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// A few keyboard messages need to be forwarded to the inner textbox of the
         /// KryptonNumericUpDown control so that the first character pressed appears in it.
         /// </summary>
+        [SecuritySafeCritical]
         protected override bool ProcessKeyEventArgs(ref Message m)
         {
             MaskedTextBox textBox = Controls[0] as MaskedTextBox;

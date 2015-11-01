@@ -22,6 +22,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms.VisualStyles;
 using System.Reflection;
 using Microsoft.Win32;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -105,6 +106,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <summary>
         /// Initialize a new instance of the VisualForm class. 
         /// </summary>
+        [SecuritySafeCritical]
         public VisualForm()
         {
             // Automatically redraw whenever the size of the window changes
@@ -139,6 +141,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// Releases all resources used by the Control. 
         /// </summary>
         /// <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+        [SecuritySafeCritical]
         protected override void Dispose(bool disposing)
         {
             _disposing = true;
@@ -182,6 +185,7 @@ namespace ComponentFactory.Krypton.Toolkit
             [System.Diagnostics.DebuggerStepThrough]
             get { return _applyCustomChrome; }
 
+            [SecuritySafeCritical]
             internal set
             {
                 // Only interested in changed values
@@ -476,6 +480,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         /// <param name="sysCommand">System command.</param>
         [EditorBrowsable(EditorBrowsableState.Never)]
+        [SecuritySafeCritical]
         public void SendSysCommand(int sysCommand)
         {
             SendSysCommand(sysCommand, IntPtr.Zero);
@@ -487,6 +492,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="sysCommand">System command.</param>
         /// <param name="lParam">LPARAM value.</param>
         [EditorBrowsable(EditorBrowsableState.Never)]
+        [SecuritySafeCritical]
         public void SendSysCommand(int sysCommand, IntPtr lParam)
         {
             // Send window message to ourself
@@ -502,6 +508,7 @@ namespace ComponentFactory.Krypton.Toolkit
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Padding RealWindowBorders
         {
+            [SecuritySafeCritical]
             get
             {
                 // Use the form level create params to get the real borders
@@ -551,6 +558,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <summary>
         /// Request the non-client area be recalculated.
         /// </summary>
+        [SecuritySafeCritical]
         public void RecalcNonClient()
         {
             if (!IsDisposed && !Disposing && IsHandleCreated)
@@ -684,6 +692,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         /// <param name="invalidRect">Area to invalidate.</param>
         /// <param name="excludeClientArea">Should client area be excluded.</param>
+        [SecuritySafeCritical]
         protected void InvalidateNonClient(Rectangle invalidRect,
                                            bool excludeClientArea)
         {
@@ -723,6 +732,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         protected Rectangle RealWindowRectangle
         {
+            [SecuritySafeCritical]
             get
             {
                 // Grab the actual current size of the window, this is more accurate than using
@@ -743,6 +753,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// Raises the HandleCreated event.
         /// </summary>
         /// <param name="e">An EventArgs containing the event data.</param>
+        [SecuritySafeCritical]
         protected override void OnHandleCreated(EventArgs e)
         {
             // Can fail on versions before XP SP1
@@ -972,6 +983,8 @@ namespace ComponentFactory.Krypton.Toolkit
         /// Process Windows-based messages.
         /// </summary>
         /// <param name="m">A Windows-based message.</param>
+        [SecuritySafeCritical]
+        [DebuggerNonUserCode]
         protected override void WndProc(ref Message m)
         {
             bool processed = false;
@@ -1081,6 +1094,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         /// <param name="m">A Windows-based message.</param>
         /// <returns>True if the message was processed; otherwise false.</returns>
+        [SecuritySafeCritical]
         protected virtual bool OnWM_NCCALCSIZE(ref Message m)
         {
             // Does the LParam contain a RECT or an NCCALCSIZE_PARAMS
@@ -1125,6 +1139,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         /// <param name="m">A Windows-based message.</param>
         /// <returns>True if the message was processed; otherwise false.</returns>
+        [SecuritySafeCritical]
         protected virtual bool OnWM_NCPAINT(ref Message m)
         {
             // Perform actual paint operation
@@ -1143,6 +1158,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         /// <param name="m">A Windows-based message.</param>
         /// <returns>True if the message was processed; otherwise false.</returns>
+        [SecuritySafeCritical]
         protected virtual bool OnWM_NCHITTEST(ref Message m)
         {
             // Extract the point in screen coordinates
@@ -1163,6 +1179,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         /// <param name="m">A Windows-based message.</param>
         /// <returns>True if the message was processed; otherwise false.</returns>
+        [SecuritySafeCritical]
         protected virtual bool OnCompWM_NCHITTEST(ref Message m)
         {
             // Let the desktop window manager process it first
@@ -1199,6 +1216,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         /// <param name="m">A Windows-based message.</param>
         /// <returns>True if the message was processed; otherwise false.</returns>
+        [SecuritySafeCritical]
         protected virtual bool OnWM_NCACTIVATE(ref Message m)
         {
             // Cache the new active state
@@ -1227,6 +1245,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         /// <param name="m">A Windows-based message.</param>
         /// <returns>True if the message was processed; otherwise false.</returns>
+        [SecuritySafeCritical]
         protected virtual bool OnPaintNonClient(ref Message m)
         {
             // Let window be updated with new text
@@ -1244,6 +1263,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         /// <param name="m">A Windows-based message.</param>
         /// <returns>True if the message was processed; otherwise false.</returns>
+        [SecuritySafeCritical]
         protected virtual bool OnWM_NCMOUSEMOVE(ref Message m)
         {
             // Extract the point in screen coordinates
@@ -1293,6 +1313,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         /// <param name="m">A Windows-based message.</param>4
         /// <returns>True if the message was processed; otherwise false.</returns>
+        [SecuritySafeCritical]
         protected virtual bool OnWM_NCLBUTTONDOWN(ref Message m)
         {
             // Extract the point in screen coordinates
@@ -1314,6 +1335,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         /// <param name="m">A Windows-based message.</param>
         /// <returns>True if the message was processed; otherwise false.</returns>
+        [SecuritySafeCritical]
         protected virtual bool OnWM_NCLBUTTONUP(ref Message m)
         {
             // Extract the point in screen coordinates
@@ -1335,6 +1357,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         /// <param name="m">A Windows-based message.</param>
         /// <returns>True if the message was processed; otherwise false.</returns>
+        [SecuritySafeCritical]
         protected virtual bool OnWM_NCMOUSELEAVE(ref Message m)
         {
             // Next time the mouse enters the window we need to track it leaving
@@ -1358,6 +1381,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         /// <param name="m">A Windows-based message.</param>
         /// <returns>True if the message was processed; otherwise false.</returns>
+        [SecuritySafeCritical]
         protected virtual bool OnWM_MOUSEMOVE(ref Message m)
         {
             // Extract the point in client coordinates
@@ -1380,6 +1404,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         /// <param name="m">A Windows-based message.</param>
         /// <returns>True if the message was processed; otherwise false.</returns>
+        [SecuritySafeCritical]
         protected virtual bool OnWM_LBUTTONUP(ref Message m)
         {
             // Capture has now expired
@@ -1418,6 +1443,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         /// <param name="m">A Windows-based message.</param>
         /// <returns>True if the message was processed; otherwise false.</returns>
+        [SecuritySafeCritical]
         protected virtual bool OnWM_NCLBUTTONDBLCLK(ref Message m)
         {
             // Extract the point in screen coordinates
@@ -1446,6 +1472,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// Perform chrome window painting in the non-client areas.
         /// </summary>
         /// <param name="hWnd">Window handle of window being painted.</param>
+        [SecuritySafeCritical]
         protected virtual void OnNonClientPaint(IntPtr hWnd)
         {
             // Create rectangle that encloses the entire window
@@ -1708,6 +1735,7 @@ namespace ComponentFactory.Krypton.Toolkit
             }
         }
 
+        [SecuritySafeCritical]
         private void OnUserPreferenceChanged(object sender, UserPreferenceChangedEventArgs e)
         {
             // If a change has occured that could effect the color table then it needs regenerating

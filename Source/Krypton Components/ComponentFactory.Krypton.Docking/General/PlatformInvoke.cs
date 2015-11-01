@@ -13,6 +13,7 @@ using System.Text;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Docking
 {
@@ -94,6 +95,7 @@ namespace ComponentFactory.Krypton.Docking
             return KEY_TOGGLED == (GetKeyState(key) & KEY_TOGGLED);
         }
 
+        [SecuritySafeCritical]
         private static int GetKeyState(Keys key)
         {
             int state = KEY_NONE;

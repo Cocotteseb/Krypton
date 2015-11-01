@@ -9,6 +9,7 @@
 // *****************************************************************************
 
 using System;
+using System.Security;
 using System.Text;
 using System.Drawing;
 using System.Collections;
@@ -325,7 +326,8 @@ namespace ComponentFactory.Krypton.Toolkit
 		/// Perform a layout of the view.
 		/// </summary>
         /// <param name="context">View context for layout operation.</param>
-		public virtual void Layout(ViewLayoutContext context)
+		[SecuritySafeCritical]
+        public virtual void Layout(ViewLayoutContext context)
 		{
             Debug.Assert(context != null);
             Debug.Assert(context.Renderer != null);
@@ -406,6 +408,7 @@ namespace ComponentFactory.Krypton.Toolkit
 		/// Perform a paint of the view.
 		/// </summary>
         /// <param name="context">Renderer context.</param>
+        [SecuritySafeCritical]
         public virtual void Paint(RenderContext context)
 		{
             Debug.Assert(context != null);

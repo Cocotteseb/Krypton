@@ -21,6 +21,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Reflection;
 using ComponentFactory.Krypton.Toolkit;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Navigator
 {
@@ -1293,6 +1294,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// Process Windows-based messages.
         /// </summary>
         /// <param name="m">A Windows-based message.</param>
+        [SecuritySafeCritical]
         protected override void WndProc(ref Message m)
         {
             // We need to snoop the need to show a context menu

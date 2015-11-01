@@ -19,6 +19,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -1084,6 +1085,7 @@ namespace ComponentFactory.Krypton.Toolkit
 		/// </summary>
 		/// <param name="charCode">The mnemonic character entered.</param>
 		/// <returns>true if the mnemonic was processsed; otherwise, false.</returns>
+        [SecuritySafeCritical]
         protected override bool ProcessMnemonic(char charCode)
 		{
 			// Are we allowed to process mnemonics?
@@ -1116,6 +1118,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// Process Windows-based messages.
         /// </summary>
         /// <param name="m">A Windows-based message.</param>
+        [SecuritySafeCritical]
         protected override void WndProc(ref Message m)
         {
             // Prevent base class from showing a context menu when right clicking it

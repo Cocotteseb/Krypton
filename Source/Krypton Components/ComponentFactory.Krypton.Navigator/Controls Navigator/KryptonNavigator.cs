@@ -22,6 +22,7 @@ using System.Runtime.InteropServices;
 using System.Reflection;
 using Microsoft.Win32;
 using ComponentFactory.Krypton.Toolkit;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Navigator
 {
@@ -36,7 +37,6 @@ namespace ComponentFactory.Krypton.Navigator
     [DesignerCategory("code")]
     [Description("Allows navigation between pages.")]
     [Docking(DockingBehavior.Ask)]
-    [LicenseProvider(typeof(EncryptedLicenseProvider))]
     [ClassInterface(ClassInterfaceType.AutoDispatch)]
     [ComVisible(true)]
     public class KryptonNavigator : VisualSimple,
@@ -1394,6 +1394,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// </summary>
         /// <param name="m">A Message that represents the window message to process.</param>
         /// <returns>true if the message was processed by the control; otherwise false.</returns>
+        [SecuritySafeCritical]
         protected override bool ProcessKeyPreview(ref Message m)
         {
             // If the TAB key has just been released...
@@ -1425,6 +1426,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// </summary>
         /// <param name="keyData">One of the Keys values that represents the key to process.</param>
         /// <returns>true if the key was processed by the control; otherwise, false.</returns>
+        [SecuritySafeCritical]
         protected override bool ProcessDialogKey(Keys keyData)
         {
             // Find out which modifier keys are being pressed
@@ -1501,6 +1503,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// </summary>
         /// <param name="charCode">The mnemonic character entered.</param>
         /// <returns>true if the mnemonic was processsed; otherwise, false.</returns>
+        [SecuritySafeCritical]
         protected override bool ProcessMnemonic(char charCode)
         {
             // If the button manager wants to process mnemonic characters and
@@ -2014,6 +2017,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// Process Windows-based messages.
         /// </summary>
         /// <param name="m">A Windows-based message.</param>
+        [SecuritySafeCritical]
         protected override void WndProc(ref Message m)
         {
             // We need to snoop the need to show a context menu

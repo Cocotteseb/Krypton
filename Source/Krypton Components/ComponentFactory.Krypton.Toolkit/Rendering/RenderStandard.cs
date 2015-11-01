@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using System.Diagnostics;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {

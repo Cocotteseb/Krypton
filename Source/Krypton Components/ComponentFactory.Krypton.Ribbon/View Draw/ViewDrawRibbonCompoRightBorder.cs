@@ -17,6 +17,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using ComponentFactory.Krypton.Toolkit;
 using System.Runtime.InteropServices;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Ribbon
 {
@@ -69,6 +70,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// Discover the preferred size of the element.
         /// </summary>
         /// <param name="context">Layout context.</param>
+        [SecuritySafeCritical]
         public override Size GetPreferredSize(ViewLayoutContext context)
         {
             Size preferredSize = Size.Empty;

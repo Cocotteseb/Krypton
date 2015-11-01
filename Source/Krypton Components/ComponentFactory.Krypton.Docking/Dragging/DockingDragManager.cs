@@ -13,6 +13,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Security.Permissions;
 using ComponentFactory.Krypton.Navigator;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Docking
 {
@@ -168,6 +169,7 @@ namespace ComponentFactory.Krypton.Docking
         /// Processes the WM_KEYDOWN from the floating window.
         /// </summary>
         /// <returns>True to eat message; otherwise false.</returns>
+        [SecuritySafeCritical]
         public bool OnKEYDOWN(ref Message m)
         {
             // Pressing escape ends dragging
@@ -204,7 +206,8 @@ namespace ComponentFactory.Krypton.Docking
         /// </summary>
         /// <param name="m">The message to be dispatched.</param>
         /// <returns>true to filter the message and stop it from being dispatched.</returns>
-        [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
+        //[SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
+        [SecuritySafeCritical]
         public bool PreFilterMessage(ref Message m)
         {
             switch (m.Msg)

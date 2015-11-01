@@ -19,6 +19,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Threading;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -105,6 +106,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// Process Windows-based messages.
             /// </summary>
             /// <param name="m">A Windows-based message.</param>
+            [SecuritySafeCritical]
             protected override void WndProc(ref Message m)
             {
                 switch (m.Msg)
@@ -319,6 +321,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// <param name="editControl">Handle of the Edit control to subclass.</param>
             /// <param name="kryptonDomainUpDown">Reference to top level control.</param>
             /// <param name="internalDomainUpDown">Reference to internal domain control.</param>
+            [SecuritySafeCritical]
             public SubclassEdit(IntPtr editControl,
                                 KryptonDomainUpDown kryptonDomainUpDown,
                                 InternalDomainUpDown internalDomainUpDown)
@@ -371,6 +374,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// </summary>
             public bool Visible
             {
+                [SecuritySafeCritical]
                 set
                 {
                     PI.SetWindowPos(Handle,
@@ -395,6 +399,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// Process Windows-based messages.
             /// </summary>
             /// <param name="m">A Windows-based message.</param>
+            [SecuritySafeCritical]
             protected override void WndProc(ref Message m)
             {
                 switch (m.Msg)
@@ -604,6 +609,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// <param name="buttonsPtr">Handle of the Buttons control to subclass.</param>
             /// <param name="kryptonDomainUpDown">Reference to top level control.</param>
             /// <param name="internalDomainUpDown">Reference to internal domain control.</param>
+            [SecuritySafeCritical]
             public SubclassButtons(IntPtr buttonsPtr,
                                    KryptonDomainUpDown kryptonDomainUpDown,
                                    InternalDomainUpDown internalDomainUpDown)
@@ -621,6 +627,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// <summary>
             /// Clean up any resources being used.
             /// </summary>
+            [SecuritySafeCritical]
             public void Dispose()
             {
                 if (_screenDC != IntPtr.Zero)
@@ -674,6 +681,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// Process Windows-based messages.
             /// </summary>
             /// <param name="m">A Windows-based message.</param>
+            [SecuritySafeCritical]
             protected override void WndProc(ref Message m)
             {
                 switch (m.Msg)
@@ -949,6 +957,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <summary>
         /// Initialize a new instance of the KryptonDomainUpDown class.
 		/// </summary>
+        [SecuritySafeCritical]
         public KryptonDomainUpDown()
         {
             // Contains another control and needs marking as such for validation to work
@@ -1991,6 +2000,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// Process Windows-based messages.
         /// </summary>
         /// <param name="m">A Windows-based message.</param>
+        [SecuritySafeCritical]
         protected override void WndProc(ref Message m)
         {
             switch (m.Msg)
@@ -2021,6 +2031,7 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Implementation
+        [SecuritySafeCritical]
         private void InvalidateChildren()
         {
             if (DomainUpDown != null)
@@ -2030,6 +2041,7 @@ namespace ComponentFactory.Krypton.Toolkit
             }
         }
 
+        [SecuritySafeCritical]
         private void SubclassEditControl()
         {
             if (_subclassEdit != null) 
@@ -2058,6 +2070,7 @@ namespace ComponentFactory.Krypton.Toolkit
             }
         }
 
+        [SecuritySafeCritical]
         private void SubclassButtonsControl()
         {
             if (_subclassButtons != null)
@@ -2180,6 +2193,7 @@ namespace ComponentFactory.Krypton.Toolkit
             OnKeyDown(e);
         }
 
+        [SecuritySafeCritical]
         private void OnDomainUpDownPreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             OnPreviewKeyDown(e);

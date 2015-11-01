@@ -16,6 +16,7 @@ using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Navigator
 {
@@ -44,6 +45,7 @@ namespace ComponentFactory.Krypton.Navigator
 		/// <param name="showTop">Show top hot area.</param>
 		/// <param name="showBottom">Show bottom hot area.</param>
         /// <param name="showMiddle">Show middle hot area.</param>
+        [SecuritySafeCritical]
         public DropDockingIndicatorsRounded(IPaletteDragDrop paletteDragDrop, 
                                             IRenderer renderer,
 							                bool showLeft, bool showRight,
@@ -91,6 +93,7 @@ namespace ComponentFactory.Krypton.Navigator
 		/// <summary>
 		/// Make sure the resources are disposed of gracefully.
 		/// </summary>
+        [SecuritySafeCritical]
         public void Dispose()
         {
             DestroyHandle();
@@ -102,7 +105,8 @@ namespace ComponentFactory.Krypton.Navigator
 		/// Show the window relative to provided screen rectangle.
 		/// </summary>
 		/// <param name="screenRect">Screen rectangle.</param>
-		public void ShowRelative(Rectangle screenRect)
+		[SecuritySafeCritical]
+        public void ShowRelative(Rectangle screenRect)
 		{
 			// Find screen middle points
 			int yMid = screenRect.Y + (screenRect.Height / 2);
@@ -134,6 +138,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// <summary>
         /// Hide the window from display.
         /// </summary>
+        [SecuritySafeCritical]
         public void Hide()
         {
             PI.ShowWindow(this.Handle, (short)PI.SW_HIDE);
@@ -187,6 +192,7 @@ namespace ComponentFactory.Krypton.Navigator
         #endregion
 
         #region Implementation
+        [SecuritySafeCritical]
         private void UpdateLayeredWindow(Rectangle rect)
         {
             // Cache the latest size and location

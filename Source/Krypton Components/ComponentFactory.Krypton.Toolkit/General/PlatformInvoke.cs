@@ -12,6 +12,7 @@ using System;
 using System.Text;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -202,7 +203,8 @@ namespace ComponentFactory.Krypton.Toolkit
         internal static extern IntPtr GetActiveWindow();
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        internal static extern int ShowWindow(IntPtr hWnd, short cmdShow);
+        //https://github.com/dockpanelsuite/dockpanelsuite/issues/68
+        internal static extern int ShowWindow(IntPtr hWnd, int cmdShow);
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         internal static extern ushort GetKeyState(int virtKey);

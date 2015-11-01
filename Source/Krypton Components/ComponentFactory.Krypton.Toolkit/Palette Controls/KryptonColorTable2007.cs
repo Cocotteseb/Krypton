@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Diagnostics;
 using Microsoft.Win32;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -280,6 +281,7 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Identity
+        [SecuritySafeCritical]
         static KryptonColorTable2007()
         {
             // Get the font settings from the system

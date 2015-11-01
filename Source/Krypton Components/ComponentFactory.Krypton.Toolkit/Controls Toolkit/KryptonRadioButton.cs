@@ -18,6 +18,7 @@ using System.ComponentModel.Design;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -637,6 +638,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         /// <param name="charCode">The mnemonic character entered.</param>
         /// <returns>true if the mnemonic was processsed; otherwise, false.</returns>
+        [SecuritySafeCritical]
         protected override bool ProcessMnemonic(char charCode)
         {
             // Are we allowed to process mneonics?

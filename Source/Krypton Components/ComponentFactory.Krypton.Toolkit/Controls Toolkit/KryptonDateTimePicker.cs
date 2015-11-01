@@ -19,6 +19,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -1802,6 +1803,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// Processes Windows messages.
         /// </summary>
         /// <param name="m">The Windows Message to process. </param>
+        [SecuritySafeCritical]
         protected override void WndProc(ref Message m)
         {
             // At design time inside the ribbon we are transparent to the mouse
@@ -1849,6 +1851,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         /// <param name="charCode">The mnemonic character entered.</param>
         /// <returns>true if the mnemonic was processsed; otherwise, false.</returns>
+        [SecuritySafeCritical]
         protected override bool ProcessMnemonic(char charCode)
         {
             // If the button manager wants to process mnemonic characters and

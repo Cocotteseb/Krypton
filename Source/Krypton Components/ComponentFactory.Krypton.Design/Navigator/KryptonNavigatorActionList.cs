@@ -15,6 +15,7 @@ using System.ComponentModel.Design;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 using ComponentFactory.Krypton.Toolkit;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Navigator
 {
@@ -555,6 +556,7 @@ namespace ComponentFactory.Krypton.Navigator
         /// Returns the collection of DesignerActionItem objects contained in the list.
         /// </summary>
         /// <returns>A DesignerActionItem array that contains the items in this list.</returns>
+        [SecurityCritical]
         public override DesignerActionItemCollection GetSortedActionItems()
         {
             DesignerActionItemCollection actions = new DesignerActionItemCollection();

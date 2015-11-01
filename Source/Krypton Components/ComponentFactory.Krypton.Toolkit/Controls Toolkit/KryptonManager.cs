@@ -17,6 +17,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using Microsoft.Win32;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -80,6 +81,7 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Identity
+        [SecuritySafeCritical]
         static KryptonManager()
         {
             // We need to notice when system color settings change

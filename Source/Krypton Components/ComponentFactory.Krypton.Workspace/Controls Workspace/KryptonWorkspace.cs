@@ -25,11 +25,12 @@ using System.Reflection;
 using System.Threading;
 using ComponentFactory.Krypton.Toolkit;
 using ComponentFactory.Krypton.Navigator;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Workspace
 {
 	/// <summary>
-    /// Layout a hierarchy of KryptonNavigator instances.
+	/// Layout a hierarchy of KryptonNavigator instances.
 	/// </summary>
     [ToolboxItem(true)]
     [ToolboxBitmap(typeof(KryptonWorkspace), "ToolboxBitmaps.KryptonWorkspace.bmp")]
@@ -39,7 +40,6 @@ namespace ComponentFactory.Krypton.Workspace
     [DesignerCategory("code")]
     [Description("Layout a hierarchy of KryptonNavigator instances.")]
     [Docking(DockingBehavior.Ask)]
-    [LicenseProvider(typeof(EncryptedLicenseProvider))]
     [ClassInterface(ClassInterfaceType.AutoDispatch)]
     [ComVisible(true)]
     public class KryptonWorkspace : VisualContainerControl,
@@ -2400,10 +2400,11 @@ namespace ComponentFactory.Krypton.Workspace
                 base.Select(directed, forward);
         }
 
-		/// <summary>
-		/// Processes a dialog key.
-		/// </summary>
-		/// <returns>true if key processed; otherwise false.</returns>
+        /// <summary>
+        /// Processes a dialog key.
+        /// </summary>
+        /// <returns>true if key processed; otherwise false.</returns>
+        [SecuritySafeCritical]
         protected override bool ProcessDialogKey(Keys keyData)
         {
             // Only if enabled and with an active cell/page are we able to do something with keys
@@ -2636,6 +2637,7 @@ namespace ComponentFactory.Krypton.Workspace
         /// Process Windows-based messages.
         /// </summary>
         /// <param name="m">A Windows-based message.</param>
+		[SecuritySafeCritical]
         protected override void WndProc(ref Message m)
         {
             // We need to snoop the need to show a context menu

@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Reflection;
 using Microsoft.Win32;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -72,6 +73,7 @@ namespace ComponentFactory.Krypton.Toolkit
 		/// <summary>
         /// Initialize a new instance of the VisualContainerControlBase class.
 		/// </summary>
+        [SecuritySafeCritical]
         protected VisualContainerControlBase()
 		{
 			#region Default ControlStyle Values
@@ -137,6 +139,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        [SecuritySafeCritical]
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -1090,6 +1093,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// Process Windows-based messages.
         /// </summary>
         /// <param name="m">A Windows-based message.</param>
+        [SecuritySafeCritical]
         protected override void WndProc(ref Message m)
         {
             // We need to snoop the need to show a context menu

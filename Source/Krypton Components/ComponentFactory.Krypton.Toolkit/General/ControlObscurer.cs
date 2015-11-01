@@ -13,6 +13,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {    
@@ -42,6 +43,7 @@ namespace ComponentFactory.Krypton.Toolkit
             #endregion
 
             #region Public
+            [SecuritySafeCritical]
             public void ShowForm(Rectangle screenRect)
             {
                 // Our initial position should overlay exactly the container

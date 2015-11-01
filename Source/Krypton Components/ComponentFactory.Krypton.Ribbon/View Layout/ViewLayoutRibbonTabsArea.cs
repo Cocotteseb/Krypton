@@ -19,6 +19,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using ComponentFactory.Krypton.Toolkit;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Ribbon
 {
@@ -615,6 +616,7 @@ namespace ComponentFactory.Krypton.Ribbon
             CheckRibbonSize();
         }
 
+        [SecuritySafeCritical]
         private void OnRibbonMdiChildActivate(object sender, EventArgs e)
         {
             // Cast to correct type

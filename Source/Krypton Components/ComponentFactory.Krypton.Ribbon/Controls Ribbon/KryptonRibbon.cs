@@ -38,7 +38,6 @@ namespace ComponentFactory.Krypton.Ribbon
     [DesignerCategory("code")]
     [Description("Ribbon control presents a tabbed set of user options.")]
     [Docking(DockingBehavior.Never)]
-    [LicenseProvider(typeof(EncryptedLicenseProvider))]
     [ClassInterface(ClassInterfaceType.AutoDispatch)]
     [ComVisible(true)]
     public class KryptonRibbon : VisualSimple,
@@ -1171,6 +1170,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <summary>
         /// Toggles into and out off keyboard mode.
         /// </summary>
+        [SecuritySafeCritical]
         public void ToggleKeyboardMode()
         {
             // Invert keyboard mode
@@ -1227,7 +1227,8 @@ namespace ComponentFactory.Krypton.Ribbon
         /// </summary>
         /// <param name="m">The message to be dispatched. You cannot modify this message.</param>
         /// <returns>true to filter the message and stop it from being dispatched; false to allow the message to continue to the next filter or control.</returns>
-        [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
+        //[SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
+        [SecuritySafeCritical]
         public bool PreFilterMessage(ref Message m)
         {
             // Prevent interception of messages during design time or after we have died
@@ -1439,6 +1440,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// Process Windows-based messages.
         /// </summary>
         /// <param name="m">A Windows-based message.</param>
+        [SecuritySafeCritical]
         protected override void WndProc(ref Message m)
         {
             // Only interested in intercepting the hit testing
@@ -1487,6 +1489,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// </summary>
         /// <param name="keyData">One of the Keys values that represents the key to process.</param>
         /// <returns>True is handled; otherwise false.</returns>
+        [SecuritySafeCritical]
         protected override bool ProcessDialogKey(Keys keyData)
         {
             // When in keyboard mode...
@@ -2533,6 +2536,7 @@ namespace ComponentFactory.Krypton.Ribbon
             }
         }
 
+        [SecuritySafeCritical]
         internal void RestorePreviousFocus()
         {
             if (_keyboardFocusWindow != IntPtr.Zero)
@@ -2963,6 +2967,7 @@ namespace ComponentFactory.Krypton.Ribbon
 
         private bool IsAppThemed
         {
+            [SecuritySafeCritical]
             get
             {
                 // If an exception was thrown last time, then always false

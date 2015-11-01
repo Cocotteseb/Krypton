@@ -19,6 +19,7 @@ using System.ComponentModel.Design;
 using System.Windows.Forms;
 using System.Diagnostics;
 using ComponentFactory.Krypton.Toolkit;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Ribbon
 {
@@ -188,6 +189,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <summary>
         /// Initialise a new instance of the KryptonRibbonGroupRichTextBox class.
         /// </summary>
+        [SecuritySafeCritical]
         public KryptonRibbonGroupRichTextBox()
         {
             // Default fields

@@ -18,12 +18,13 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Windows.Forms.VisualStyles;
 using System.Runtime.InteropServices;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
-	/// <summary>
-	/// Provide accurate text measuring and drawing capability.
-	/// </summary>
+    /// <summary>
+    /// Provide accurate text measuring and drawing capability.
+    /// </summary>
     public class AccurateText : GlobalId
     {
         #region Static Fields
@@ -286,14 +287,15 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="state">State of the source element.</param>
         /// <param name="color">Color of the text.</param>
         /// <param name="copyBackground">Should existing background be copied into the bitmap.</param>
-        public static void DrawCompositionGlowingText(Graphics g, 
-                                                      string text, 
-                                                      Font font, 
-                                                      Rectangle bounds, 
+        [SecuritySafeCritical]
+        public static void DrawCompositionGlowingText(Graphics g,
+                                                      string text,
+                                                      Font font,
+                                                      Rectangle bounds,
                                                       PaletteState state,
                                                       Color color,
                                                       bool copyBackground)
-		{
+        {
             try
             {
                 // Get the hDC for the graphics instance and create a memory DC

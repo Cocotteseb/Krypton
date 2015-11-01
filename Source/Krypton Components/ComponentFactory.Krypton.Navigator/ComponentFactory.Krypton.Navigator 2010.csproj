@@ -20,7 +20,7 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -36,6 +36,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -92,9 +93,7 @@
     <Compile Include="Controller\PageButtonController.cs" />
     <Compile Include="Controller\DragViewController.cs" />
     <Compile Include="Controller\OutlookMiniController.cs" />
-    <Compile Include="Controls Visuals\VisualPopupPage.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Controls Visuals\VisualPopupPage.cs" />
     <Compile Include="Converters\ButtonDisplayConverter.cs" />
     <Compile Include="Converters\ButtonDisplayLogicConverter.cs" />
     <Compile Include="Converters\CloseButtonActionConverter.cs" />
@@ -140,9 +139,7 @@
     <Compile Include="Licence\LicenseInstallForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Page\KryptonPage.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Page\KryptonPage.cs" />
     <Compile Include="EventArgs\KryptonPageCancelEventArgs.cs" />
     <Compile Include="Page\KryptonPageCollection.cs" />
     <Compile Include="Palette\PaletteMetrics.cs" />
@@ -212,9 +209,7 @@
     <Compile Include="View Builder\ViewBuilderGroup.cs" />
     <Compile Include="View Builder\ViewBuilderPanel.cs" />
     <Compile Include="General\Definitions.cs" />
-    <Compile Include="Controls Navigator\KryptonNavigator.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Controls Navigator\KryptonNavigator.cs" />
     <Compile Include="Controls Navigator\KryptonNavigatorControlCollection.cs">
     </Compile>
     <Compile Include="View Builder\ViewBuilderBase.cs" />

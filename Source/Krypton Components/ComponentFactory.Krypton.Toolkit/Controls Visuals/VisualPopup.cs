@@ -21,6 +21,7 @@ using System.Diagnostics;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Microsoft.Win32;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -166,6 +167,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// Show the popup using the provided rectangle as the screen rect.
         /// </summary>
         /// <param name="screenRect">Screen rectangle for showing the popup.</param>
+        [SecuritySafeCritical]
         public virtual void Show(Rectangle screenRect)
         {
             // Update the screen position
@@ -220,6 +222,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="m">Original message.</param>
         /// <param name="pt">Client coordinates point.</param>
         /// <returns>True to end tracking; otherwise false.</returns>
+        [SecuritySafeCritical]
         public virtual bool DoesCurrentMouseDownEndAllTracking(Message m, Point pt)
         {
             bool endTracking = !ClientRectangle.Contains(pt);
@@ -468,6 +471,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         protected override CreateParams CreateParams
         {
+            [SecuritySafeCritical]
             get
             {
                 CreateParams cp = base.CreateParams;
@@ -643,6 +647,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         /// <param name="keyData">One of the Keys values that represents the key to process.</param>
         /// <returns>true if the key was processed; otherwise false.</returns>
+        [SecuritySafeCritical]
         protected override bool ProcessDialogKey(Keys keyData)
         {
             // Cannot process a message for a disposed control
@@ -729,6 +734,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// Processes Windows messages.
         /// </summary>
         /// <param name="m">The Windows Message to process.</param>
+        [SecuritySafeCritical]
         protected override void WndProc(ref Message m)
         {
             switch (m.Msg)

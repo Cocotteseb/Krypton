@@ -15,6 +15,7 @@ using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Navigator
 {
@@ -80,7 +81,8 @@ namespace ComponentFactory.Krypton.Navigator
 		/// Show the window relative to provided screen rectangle.
 		/// </summary>
 		/// <param name="screenRect">Screen rectangle.</param>
-		public void ShowRelative(Rectangle screenRect)
+		[SecuritySafeCritical]
+        public void ShowRelative(Rectangle screenRect)
 		{
 			// Find screen middle points
 			int yMid = screenRect.Y + (screenRect.Height / 2);

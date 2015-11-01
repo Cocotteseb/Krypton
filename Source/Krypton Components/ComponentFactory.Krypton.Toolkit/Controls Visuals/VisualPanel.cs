@@ -19,6 +19,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Reflection;
 using Microsoft.Win32;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -729,6 +730,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// Update global event attachments.
         /// </summary>
         /// <param name="attach">True if attaching; otherwise false.</param>
+        [SecuritySafeCritical]
         protected virtual void UpdateGlobalEvents(bool attach)
         {
             if (attach)

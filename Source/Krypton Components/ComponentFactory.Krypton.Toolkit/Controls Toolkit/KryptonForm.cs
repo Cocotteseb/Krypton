@@ -19,6 +19,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 using Microsoft.Win32;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -575,6 +576,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         /// <returns>FormWindowState enumeration value.</returns>
         [EditorBrowsable(EditorBrowsableState.Never)]
+        [SecuritySafeCritical]
         public FormWindowState GetWindowState()
         {
             // Get the current window style (cannot use the 

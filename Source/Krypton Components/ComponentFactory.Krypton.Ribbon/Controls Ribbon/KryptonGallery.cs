@@ -20,6 +20,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using ComponentFactory.Krypton.Toolkit;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Ribbon
 {
@@ -33,7 +34,6 @@ namespace ComponentFactory.Krypton.Ribbon
     [Designer("ComponentFactory.Krypton.Ribbon.KryptonGalleryDesigner, ComponentFactory.Krypton.Design, Version=4.4.0.2, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e")]
     [DesignerCategory("code")]
     [Description("Select from a group of possible images.")]
-    [LicenseProvider(typeof(EncryptedLicenseProvider))]
     [ClassInterface(ClassInterfaceType.AutoDispatch)]
     [ComVisible(true)]
     public class KryptonGallery : VisualSimpleBase
@@ -644,6 +644,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// </summary>
         /// <param name="keyData">One of the Keys values that represents the key to process.</param>
         /// <returns>True is handled; otherwise false.</returns>
+        [SecuritySafeCritical]
         protected override bool ProcessDialogKey(Keys keyData)
         {
             // Only interested in keys if we have the focus
@@ -730,6 +731,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// Process Windows-based messages.
         /// </summary>
         /// <param name="m">A Windows-based message.</param>
+        [SecuritySafeCritical]
         protected override void WndProc(ref Message m)
         {
             switch (m.Msg)

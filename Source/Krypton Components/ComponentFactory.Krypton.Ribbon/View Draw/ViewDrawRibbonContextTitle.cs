@@ -18,6 +18,7 @@ using System.Diagnostics;
 using System.Windows.Forms.VisualStyles;
 using System.Runtime.InteropServices;
 using ComponentFactory.Krypton.Toolkit;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Ribbon
 {
@@ -408,6 +409,7 @@ namespace ComponentFactory.Krypton.Ribbon
         #endregion
 
         #region Implementation
+        [SecuritySafeCritical]
         private void RenderOnComposition(RenderContext context)
         {
             // Convert the clipping rectangle from floating to int version

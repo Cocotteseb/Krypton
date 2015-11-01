@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Reflection;
 using Microsoft.Win32;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -812,6 +813,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// Update global event attachments.
         /// </summary>
         /// <param name="attach">True if attaching; otherwise false.</param>
+        [SecuritySafeCritical]
         protected virtual void UpdateGlobalEvents(bool attach)
         {
             if (attach)
@@ -1142,6 +1144,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="msg">A Message, passed by reference, that represents the window message to process.</param>
         /// <param name="keyData">One of the Keys values that represents the key to process.</param>
         /// <returns>True is handled; otherwise false.</returns>
+        [SecuritySafeCritical]
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             // If we have a defined context menu then need to check for matching shortcut
@@ -1156,6 +1159,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// Process Windows-based messages.
         /// </summary>
         /// <param name="m">A Windows-based message.</param>
+        [SecuritySafeCritical]
         protected override void WndProc(ref Message m)
         {
             // We need to snoop the need to show a context menu

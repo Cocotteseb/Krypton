@@ -24,6 +24,7 @@ using System.Diagnostics;
 using ComponentFactory.Krypton.Toolkit;
 using ComponentFactory.Krypton.Navigator;
 using ComponentFactory.Krypton.Workspace;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Docking
 {
@@ -109,6 +110,7 @@ namespace ComponentFactory.Krypton.Docking
 		/// Processes Windows messages.
 		/// </summary>
 		/// <param name="m">The Windows Message to process. </param>
+        [SecuritySafeCritical]
         protected override void WndProc(ref Message m)
         {
             switch (m.Msg)

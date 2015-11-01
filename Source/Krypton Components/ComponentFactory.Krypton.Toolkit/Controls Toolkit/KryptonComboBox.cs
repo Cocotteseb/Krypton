@@ -20,6 +20,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Microsoft.Win32;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -86,6 +87,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// Process Windows-based messages.
             /// </summary>
             /// <param name="m">A Windows-based message.</param>
+            [SecuritySafeCritical]
             protected override void WndProc(ref Message m)
             {
                 switch (m.Msg)
@@ -261,6 +263,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// Process Windows-based messages.
             /// </summary>
             /// <param name="m">A Windows-based message.</param>
+            [SecuritySafeCritical]
             protected override void WndProc(ref Message m)
             {
                 switch (m.Msg)
@@ -553,6 +556,7 @@ namespace ComponentFactory.Krypton.Toolkit
 
             private bool IsAppThemed
             {
+                [SecuritySafeCritical]
                 get
                 {
                     try
@@ -596,6 +600,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// </summary>
             /// <param name="editControl">Handle of the Edit control to subclass.</param>
             /// <param name="kryptonComboBox">Reference to top level control.</param>
+            [SecuritySafeCritical]
             public SubclassEdit(IntPtr editControl,
                                 KryptonComboBox kryptonComboBox)
             {
@@ -635,6 +640,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// </summary>
             public bool Visible
             {
+                [SecuritySafeCritical]
                 set 
                 {
                     PI.SetWindowPos(Handle,
@@ -651,6 +657,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// Process Windows-based messages.
             /// </summary>
             /// <param name="m">A Windows-based message.</param>
+            [SecuritySafeCritical]
             protected override void WndProc(ref Message m)
             {
                 switch (m.Msg)
@@ -985,6 +992,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <summary>
         /// Initialize a new instance of the KryptonComboBox class.
 		/// </summary>
+        [SecuritySafeCritical]
         public KryptonComboBox()
         {
             // Contains another control and needs marking as such for validation to work
@@ -1105,6 +1113,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        [SecuritySafeCritical]
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -2674,6 +2683,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// Process Windows-based messages.
         /// </summary>
         /// <param name="m">A Windows-based message.</param>
+        [SecuritySafeCritical]
         protected override void WndProc(ref Message m)
         {
             switch (m.Msg)
@@ -2714,6 +2724,7 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Implementation
+        [SecuritySafeCritical]
         private void AttachEditControl()
         {
             if (!IsDisposed && !Disposing)
@@ -2788,6 +2799,7 @@ namespace ComponentFactory.Krypton.Toolkit
             }
         }
 
+        [SecuritySafeCritical]
         private void OnComboBoxDrawItem(object sender, DrawItemEventArgs e)
         {
             Rectangle drawBounds = e.Bounds;
@@ -3052,6 +3064,7 @@ namespace ComponentFactory.Krypton.Toolkit
             OnKeyDown(e);
         }
 
+        [SecuritySafeCritical]
         private void OnComboBoxPreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             OnPreviewKeyDown(e);

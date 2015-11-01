@@ -19,6 +19,7 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using System.Diagnostics;
 using Microsoft.Win32;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -66,6 +67,7 @@ namespace ComponentFactory.Krypton.Toolkit
 		/// <summary>
         /// Initialize a new instance of the PaletteBase class.
 		/// </summary>
+        [SecuritySafeCritical]
         public PaletteBase()
         {
             // We need to notice when system color settings change
@@ -1289,6 +1291,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         protected virtual Padding InputControlPadding
         {
+            [SecuritySafeCritical]
             get
             {
                 if (!_inputControlPadding.HasValue)
@@ -1337,6 +1340,7 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region OnUserPreferenceChanged
+        [SecuritySafeCritical]
         internal void UserPreferenceChanged()
         {
             OnUserPreferenceChanged(this, new UserPreferenceChangedEventArgs(UserPreferenceCategory.General));

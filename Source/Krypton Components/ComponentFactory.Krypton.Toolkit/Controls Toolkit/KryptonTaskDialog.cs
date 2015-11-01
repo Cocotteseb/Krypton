@@ -27,6 +27,7 @@ using System.Threading;
 using System.Runtime.InteropServices;
 using System.Media;
 using Microsoft.Win32;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -480,6 +481,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// Shows the task dialog as a modal dialog box with the currently active window set as its owner.
         /// </summary>
         /// <returns>One of the DialogResult values.</returns>
+        [SecuritySafeCritical]
         public DialogResult ShowDialog()
         {
             return ShowDialog(Control.FromHandle(PI.GetActiveWindow()));

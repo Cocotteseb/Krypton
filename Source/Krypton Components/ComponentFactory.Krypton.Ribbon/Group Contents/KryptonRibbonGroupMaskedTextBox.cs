@@ -20,6 +20,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Globalization;
 using ComponentFactory.Krypton.Toolkit;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Ribbon
 {
@@ -175,6 +176,7 @@ namespace ComponentFactory.Krypton.Ribbon
         /// <summary>
         /// Initialise a new instance of the KryptonRibbonGroupMaskedTextBox class.
         /// </summary>
+        [SecuritySafeCritical]
         public KryptonRibbonGroupMaskedTextBox()
         {
             // Default fields

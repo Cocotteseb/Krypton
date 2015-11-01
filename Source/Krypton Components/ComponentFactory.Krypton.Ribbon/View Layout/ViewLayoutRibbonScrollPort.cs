@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Diagnostics;
 using ComponentFactory.Krypton.Toolkit;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Ribbon
 {
@@ -68,6 +69,7 @@ namespace ComponentFactory.Krypton.Ribbon
             /// </summary>
             /// <param name="keyData">One of the Keys values that represents the key to process.</param>
             /// <returns>True is handled; otherwise false.</returns>
+            [SecuritySafeCritical]
             protected override bool ProcessDialogKey(Keys keyData)
             {
                 // Grab the controlling control that is a parent

@@ -20,6 +20,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Reflection;
 using Microsoft.Win32;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -1482,6 +1483,7 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Implementation
+        [SecuritySafeCritical]
         private void SetupVisuals()
         {
             // Setup the invoke used to refresh display

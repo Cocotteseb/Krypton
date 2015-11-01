@@ -19,6 +19,7 @@ using System.ComponentModel.Design;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -111,6 +112,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// <param name="gr">Graphics instance to use.</param>
             /// <param name="bounds">Drawing bounds.</param>
             /// <returns>Pointer to returned result.</returns>
+           [SecuritySafeCritical]
             public int Print(int charFrom, int charTo, Graphics gr, Rectangle bounds)
             {
                 //Calculate the area to render and print
@@ -165,6 +167,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// Process Windows-based messages.
             /// </summary>
             /// <param name="m">A Windows-based message.</param>
+            [SecuritySafeCritical]
             protected override void WndProc(ref Message m)
             {
                 switch (m.Msg)
@@ -402,6 +405,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <summary>
         /// Initialize a new instance of the KryptonRichTextBox class.
 		/// </summary>
+        [SecuritySafeCritical]
         public KryptonRichTextBox()
         {
             // Contains another control and needs marking as such for validation to work
@@ -2250,6 +2254,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// Process Windows-based messages.
         /// </summary>
         /// <param name="m">A Windows-based message.</param>
+        [SecuritySafeCritical]
         protected override void WndProc(ref Message m)
         {
             switch (m.Msg)
@@ -2381,6 +2386,7 @@ namespace ComponentFactory.Krypton.Toolkit
             OnKeyDown(e);
         }
 
+        [SecuritySafeCritical]
         private void OnRichTextBoxPreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             OnPreviewKeyDown(e);

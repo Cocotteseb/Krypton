@@ -26,6 +26,7 @@ using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Diagnostics;
 using System.Reflection;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -125,6 +126,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         public static string UniqueString
         {
+            [SecuritySafeCritical]
             get
             {
                 // Generate a GUID that is guaranteed to be unique
@@ -953,6 +955,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// Get the number of bits used to define the color depth of the display.
         /// </summary>
         /// <returns>Number of bits in color depth.</returns>
+        [SecuritySafeCritical]
         public static int ColorDepth()
         {
             // Get access to the desktop DC
@@ -974,6 +977,7 @@ namespace ComponentFactory.Krypton.Toolkit
         public static bool IsShiftKeyPressed
         {
             [System.Diagnostics.DebuggerStepThrough]
+            [SecuritySafeCritical]
             get { return ((int)(PI.GetKeyState(VK_SHIFT) & 0x00008000) != 0); }
         }
 
@@ -983,6 +987,7 @@ namespace ComponentFactory.Krypton.Toolkit
         public static bool IsCtrlKeyPressed
         {
             [System.Diagnostics.DebuggerStepThrough]
+            [SecuritySafeCritical]
             get { return ((int)(PI.GetKeyState(VK_CONTROL) & 0x00008000) != 0); }
         }
 
@@ -992,6 +997,7 @@ namespace ComponentFactory.Krypton.Toolkit
         public static bool IsAltKeyPressed
         {
             [System.Diagnostics.DebuggerStepThrough]
+            [SecuritySafeCritical]
             get { return ((int)(PI.GetKeyState(VK_MENU) & 0x00008000) != 0); }
         }
 
@@ -1075,6 +1081,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         /// <param name="cp">Window style parameters.</param>
         /// <returns>Border sizing.</returns>
+        [SecuritySafeCritical]
         public static Padding GetWindowBorders(CreateParams cp)
         {
             PI.RECT rect = new PI.RECT();
@@ -1097,6 +1104,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         /// <param name="f">Form reference.</param>
         /// <returns>True if minimized; otherwise false.</returns>
+        [SecuritySafeCritical]
         public static bool IsFormMinimized(Form f)
         {
             // Get the current window style (cannot use the 
@@ -1111,6 +1119,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         /// <param name="f">Form reference.</param>
         /// <returns>True if maximized; otherwise false.</returns>
+        [SecuritySafeCritical]
         public static bool IsFormMaximized(Form f)
         {
             // Get the current window style (cannot use the 
@@ -1125,6 +1134,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// Gets the real client rectangle of the list.
         /// </summary>
         /// <param name="handle">Window handle of the control.</param>
+        [SecuritySafeCritical]
         public static Rectangle RealClientRectangle(IntPtr handle)
         {
             // Grab the actual current size of the window, this is more accurate than using
@@ -1452,6 +1462,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         /// <param name="m">Window message.</param>
         /// <returns>Screen point.</returns>
+        [SecuritySafeCritical]
         public static Point ClientMouseMessageToScreenPt(Message m)
         {
             // Extract the x and y mouse position from message

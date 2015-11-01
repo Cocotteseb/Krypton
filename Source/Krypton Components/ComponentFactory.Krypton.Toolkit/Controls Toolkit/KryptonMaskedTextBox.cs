@@ -20,6 +20,7 @@ using System.Runtime.InteropServices;
 using System.Globalization;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -106,6 +107,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// Process Windows-based messages.
             /// </summary>
             /// <param name="m">A Windows-based message.</param>
+            [SecuritySafeCritical]
             protected override void WndProc(ref Message m)
             {
                 switch (m.Msg)
@@ -431,6 +433,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <summary>
         /// Initialize a new instance of the KryptonMaskedTextBox class.
 		/// </summary>
+        [SecuritySafeCritical]
         public KryptonMaskedTextBox()
         {
             // Contains another control and needs marking as such for validation to work
@@ -1876,6 +1879,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// Process Windows-based messages.
         /// </summary>
         /// <param name="m">A Windows-based message.</param>
+        [SecuritySafeCritical]
         protected override void WndProc(ref Message m)
         {
             switch (m.Msg)
@@ -2031,6 +2035,7 @@ namespace ComponentFactory.Krypton.Toolkit
             OnKeyDown(e);
         }
 
+        [SecuritySafeCritical]
         private void OnMaskedTextBoxPreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             OnPreviewKeyDown(e);

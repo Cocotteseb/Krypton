@@ -152,6 +152,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// Start tracking the provided popup.
         /// </summary>
         /// <param name="popup">Popup instance to track.</param>
+        [SecuritySafeCritical]
         public void StartTracking(VisualPopup popup)
         {
             Debug.Assert(popup != null);
@@ -345,7 +346,8 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         /// <param name="m">The message to be dispatched. You cannot modify this message.</param>
         /// <returns>true to filter the message and stop it from being dispatched; false to allow the message to continue to the next filter or control.</returns>
-        [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
+        //[SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
+        [SecuritySafeCritical]
         public bool PreFilterMessage(ref Message m)
         {
             // If we have suspended operation....
@@ -468,6 +470,7 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Implementation
+        [SecuritySafeCritical]
         private bool ProcessKeyboard(ref Message m)
         {
             // If focus is not inside the current popup...
@@ -486,6 +489,7 @@ namespace ComponentFactory.Krypton.Toolkit
             }
         }
 
+        [SecuritySafeCritical]
         private bool ProcessClientMouseDown(ref Message m)
         {
             bool processed = false;
@@ -572,6 +576,7 @@ namespace ComponentFactory.Krypton.Toolkit
             return processed;
         }
 
+        [SecuritySafeCritical]
         private bool ProcessNonClientMouseDown(ref Message m)
         {
             // Extract the x and y mouse position from message
@@ -607,6 +612,7 @@ namespace ComponentFactory.Krypton.Toolkit
             return processed;
         }
 
+        [SecuritySafeCritical]
         private bool ProcessMouseMove(ref Message m)
         {
             // Is this message for a different window?
@@ -635,6 +641,7 @@ namespace ComponentFactory.Krypton.Toolkit
                 return false;
         }
 
+        [SecuritySafeCritical]
         private bool ProcessMouseMoveWithCMS(ref Message m)
         {
             if (_current == null)
@@ -671,6 +678,7 @@ namespace ComponentFactory.Krypton.Toolkit
             return ScreenPtToClientPt(pt, _current.Handle);
         }
 
+        [SecuritySafeCritical]
         private Point ScreenPtToClientPt(Point pt, IntPtr handle)
         {
             PI.POINTC clientPt = new PI.POINTC();
@@ -696,6 +704,7 @@ namespace ComponentFactory.Krypton.Toolkit
             return new Point(clientPt.x, clientPt.y);
         }
 
+        [SecuritySafeCritical]
         private bool IsKeyOrMouseMessage(ref Message m)
         {
             if ((m.Msg >= PI.WM_MOUSEMOVE) && (m.Msg <= PI.WM_MOUSEWHEEL))

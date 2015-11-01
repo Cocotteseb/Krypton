@@ -21,6 +21,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Collections;
 using System.Reflection;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -72,6 +73,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// Initialize a new instance of the InternalTreeView class.
             /// </summary>
             /// <param name="kryptonTreeView">Reference to owning control.</param>
+            [SecuritySafeCritical]
             public InternalTreeView(KryptonTreeView kryptonTreeView)
             {
                 SetStyle(ControlStyles.ResizeRedraw, true);
@@ -94,6 +96,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// Releases all resources used by the Control. 
             /// </summary>
             /// <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+            [SecuritySafeCritical]
             protected override void Dispose(bool disposing)
             {
                 base.Dispose(disposing);
@@ -240,6 +243,7 @@ namespace ComponentFactory.Krypton.Toolkit
             #endregion
 
             #region Private
+            [SecuritySafeCritical]
             private void WmPaint(ref Message m)
             {
                 IntPtr hdc;
@@ -533,6 +537,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <summary>
         /// Initialize a new instance of the KryptonTreeView class.
         /// </summary>
+        [SecuritySafeCritical]
         public KryptonTreeView()
         {
             // Contains another control and needs marking as such for validation to work
@@ -671,6 +676,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// Releases all resources used by the Control. 
         /// </summary>
         /// <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+        [SecuritySafeCritical]
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -2091,6 +2097,7 @@ namespace ComponentFactory.Krypton.Toolkit
             return depth * _treeView.Indent;
         }
 
+        [SecuritySafeCritical]
         private void OnTreeViewDrawNode(object sender, DrawTreeNodeEventArgs e)
         {
             // We cannot do anything without a valid node

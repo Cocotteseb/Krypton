@@ -136,7 +136,8 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         /// <param name="m">Message to process.</param>
         /// <returns>True to suppress message dispatch; false otherwise.</returns>
-        [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
+        //[SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
+        [SecuritySafeCritical]
         public bool PreFilterMessage(ref Message m)
         {
             // Prevent mouse messages from activating any application windows

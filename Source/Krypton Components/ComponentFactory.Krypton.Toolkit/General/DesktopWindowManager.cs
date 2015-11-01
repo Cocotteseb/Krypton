@@ -13,6 +13,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -27,6 +28,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         public static bool IsCompositionEnabled
         {
+            [SecuritySafeCritical]
             get
             {
                 // Desktop composition is only available on Vista upwards
@@ -47,6 +49,7 @@ namespace ComponentFactory.Krypton.Toolkit
         /// </summary>
         /// <param name="hWnd">Window handle of form.</param>
         /// <param name="padding">Distance for each form edge.</param>
+        [SecuritySafeCritical]
         public static void ExtendFrameIntoClientArea(IntPtr hWnd, Padding padding)
         {
             Debug.Assert(hWnd != null);

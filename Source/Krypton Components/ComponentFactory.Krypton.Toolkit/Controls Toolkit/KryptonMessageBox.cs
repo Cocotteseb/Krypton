@@ -27,6 +27,7 @@ using System.Threading;
 using System.Runtime.InteropServices;
 using System.Media;
 using Microsoft.Win32;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -160,6 +161,7 @@ namespace ComponentFactory.Krypton.Toolkit
             /// Processes Windows messages.
             /// </summary>
             /// <param name="m">The Windows Message to process. </param>
+            [SecuritySafeCritical]
             protected override void WndProc(ref Message m)
             {
                 switch (m.Msg)
@@ -623,6 +625,7 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Implementation
+        [SecuritySafeCritical]
         private static DialogResult InternalShow(IWin32Window owner,
                                                  string text, string caption,
                                                  MessageBoxButtons buttons, 

@@ -27,6 +27,7 @@ using System.Threading;
 using System.Runtime.InteropServices;
 using System.Media;
 using Microsoft.Win32;
+using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
@@ -161,6 +162,7 @@ namespace ComponentFactory.Krypton.Toolkit
         #endregion
 
         #region Implementation
+        [SecuritySafeCritical]
         private static string InternalShow(IWin32Window owner,
                                            string prompt, 
                                            string caption,
