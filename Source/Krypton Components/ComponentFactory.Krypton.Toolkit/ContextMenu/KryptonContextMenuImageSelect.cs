@@ -64,6 +64,14 @@ namespace ComponentFactory.Krypton.Toolkit
         [Category("Action")]
         [Description("Occurs when user is tracking over an image.")]
         public event EventHandler<ImageSelectEventArgs> TrackingImage;
+
+        /// <summary>
+        /// Occurs when the value of the SelectedIndex property changes.
+        /// </summary>
+        [Category("Action")]
+        [Description("Occurs when an image is clicked.")]
+        public event EventHandler Click;
+
         #endregion
 
         #region Identity
@@ -340,6 +348,18 @@ namespace ComponentFactory.Krypton.Toolkit
             if (TrackingImage != null)
                 TrackingImage(this, e);
         }
+
+        /// <summary>
+        /// Raises the Click event.
+        /// </summary>
+        /// <param name="e">An EventArgs that contains the event data.</param>
+        internal virtual void OnClick(EventArgs e)
+        {
+            if (Click != null)
+                Click(this, e);
+        }
+       
+
         #endregion
 
         #region Internal
