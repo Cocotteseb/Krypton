@@ -1,5 +1,11 @@
-# This is a fork with changes I've made when the suite was a commercial product.
-It is also the base on which the Krypton OutlookGrid relies (https://kryptonoutlookgrid.codeplex.com/)
+# Fork
+
+This is a fork of the original ComponentFactory Krypton library (https://github.com/ComponentFactory/Krypton), which gathers all the modifications I've made to the suite when building stuff for JDH Software (and when it was a commercial product). It is my humble contribution to the community and all pull requests are welcome.
+
+# Krypton OutlookGrid
+
+This fork is also the baseline of my project Krypton OutlookGrid - a new Krypton Datagridview with multi sorting/grouping and other cool things - (https://kryptonoutlookgrid.codeplex.com/)
+Check it out ;)
 
 # Krypton Suite of .NET WinForms Controls
 
