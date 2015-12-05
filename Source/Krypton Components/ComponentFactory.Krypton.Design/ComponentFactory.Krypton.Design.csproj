@@ -208,6 +208,8 @@
     <Compile Include="Toolkit\KryptonTextBoxDesigner.cs" />
     <Compile Include="Toolkit\KryptonTrackBarActionList.cs" />
     <Compile Include="Toolkit\KryptonTrackBarDesigner.cs" />
+    <Compile Include="Toolkit\KryptonTreeViewActionList.cs" />
+    <Compile Include="Toolkit\KryptonTreeViewDesigner.cs" />
     <Compile Include="Toolkit\KryptonWrapLabelActionList.cs" />
     <Compile Include="Toolkit\KryptonWrapLabelDesigner.cs" />
     <Compile Include="Toolkit\PaletteDrawBordersEditor.cs" />
