@@ -7,6 +7,8 @@ This is a fork of the original ComponentFactory Krypton library (https://github.
 This fork is also the baseline of my project Krypton OutlookGrid - a new Krypton Datagridview with multi sorting/grouping and other cool things - (https://kryptonoutlookgrid.codeplex.com/)
 Check it out ;)
 
+---- original readme
+
 # Krypton Suite of .NET WinForms Controls
 
 The Kryton Suite of .NET WinForms controls are now freely available for use in personal or commerical projects. I developed and sold them from my company Component Factory until 2014 when the lack sales meant that selling the controls no longer made sense.
