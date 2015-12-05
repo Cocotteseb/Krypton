@@ -34,12 +34,16 @@ namespace ComponentFactory.Krypton.Toolkit
                 // Desktop composition is only available on Vista upwards
                 if (Environment.OSVersion.Version.Major < 6)
                     return false;
-                else
+                else if (Environment.OSVersion.Version.Major < 10)
                 {
                     // Ask the desktop window manager is composition is currently enabled
                     bool compositionEnabled = false;
                     PI.DwmIsCompositionEnabled(ref compositionEnabled);
                     return compositionEnabled;
+                }
+                else //Win 10
+                {
+                    return UserSystemPreferencesService.IsTransparencyEnabled;
                 }
             }
         }

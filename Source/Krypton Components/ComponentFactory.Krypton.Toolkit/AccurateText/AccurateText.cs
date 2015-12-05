@@ -251,20 +251,28 @@ namespace ComponentFactory.Krypton.Toolkit
                     try
                     {
                         if (composition && glowing)
-                            DrawCompositionGlowingText(g, memento.Text, memento.Font, rect, state,
-                                                       SystemColors.ActiveCaptionText, true);
+                            //DrawCompositionGlowingText(g, memento.Text, memento.Font, rect, state,
+                            //                           SystemColors.ActiveCaptionText, true);
+                            if (Environment.OSVersion.Version.Major >= 10 && Environment.OSVersion.Version.Build >= 10586)
+                            {
+                                DrawCompositionGlowingText(g, memento.Text, memento.Font, rect, state, (state == PaletteState.Disabled) ? Color.FromArgb(170,170,170) : ContrastColor(AccentColorService.GetColorByTypeName("ImmersiveSystemAccent")), true);
+                            }
+                            else
+                            {
+                                DrawCompositionGlowingText(g, memento.Text, memento.Font, rect, state, SystemColors.ActiveCaptionText, true);
+                            }
                         else if (composition)
                         {
                             //Check if correct in all cases
                             SolidBrush tmpBrush = brush as SolidBrush;
                             Color tmpColor;
-                            if (  tmpBrush.Color == null)
+                            if (tmpBrush.Color == null)
                                 tmpColor = SystemColors.ActiveCaptionText;
                             else
                                 tmpColor = tmpBrush.Color;
-                            
-                            DrawCompositionText(g, memento.Text, memento.Font, rect, state, 
-                              tmpColor , true, memento.Format);
+
+                            DrawCompositionText(g, memento.Text, memento.Font, rect, state,
+                              tmpColor, true, memento.Format);
                         }
                         else
                             g.DrawString(memento.Text, memento.Font, brush, rect, memento.Format);
@@ -290,6 +298,28 @@ namespace ComponentFactory.Krypton.Toolkit
             }
 
             return ret;
+        }
+
+        private static Color ContrastColor(Color color)
+        {
+            int d = 0;
+            //  Counting the perceptive luminance - human eye favors green color... 
+            double a = (1
+                        - (((0.299 * color.R)
+                        + ((0.587 * color.G) + (0.114 * color.B)))
+                        / 255));
+            if ((a < 0.5))
+            {
+                d = 0;
+            }
+            else
+            {
+                //  bright colors - black font
+                d = 255;
+            }
+
+            //  dark colors - white font
+            return Color.FromArgb(d, d, d);
         }
         #endregion
 

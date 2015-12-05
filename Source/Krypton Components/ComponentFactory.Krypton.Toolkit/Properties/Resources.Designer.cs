@@ -2263,9 +2263,29 @@ namespace ComponentFactory.Krypton.Toolkit.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap TreeCollapseDark {
+            get {
+                object obj = ResourceManager.GetObject("TreeCollapseDark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap TreeCollapseMinus {
             get {
                 object obj = ResourceManager.GetObject("TreeCollapseMinus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TreeExpandDark {
+            get {
+                object obj = ResourceManager.GetObject("TreeExpandDark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

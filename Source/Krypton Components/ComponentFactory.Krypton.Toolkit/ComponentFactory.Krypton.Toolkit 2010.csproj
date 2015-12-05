@@ -420,6 +420,11 @@
     <Compile Include="Palette Controls\PaletteDataGridViewTripleCommon.cs" />
     <Compile Include="Palette Controls\PaletteDataGridViewTripleRedirect.cs" />
     <Compile Include="Palette Controls\PaletteColorButtonStrings.cs" />
+    <Compile Include="Rendering\RenderOffice2013.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rendering\Win10Glass\AccentColorService.cs" />
+    <Compile Include="Rendering\Win10Glass\BlurWindowExtensions.cs" />
     <Compile Include="Rendering\KryptonOffice2013Renderer.cs" />
     <Compile Include="Rendering\RenderExpertHelpers.cs" />
     <Compile Include="Rendering\RenderOffice2007.cs">
@@ -432,6 +437,8 @@
     <Compile Include="Rendering\RenderSparkle.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Rendering\Win10Glass\ThemeService.cs" />
+    <Compile Include="Rendering\Win10Glass\UserSystemPreferencesService.cs" />
     <Compile Include="Values\CheckBoxImages.cs">
     </Compile>
     <Compile Include="Palette Controls\PaletteHeaderButtonRedirect.cs" />
