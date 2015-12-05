@@ -5,7 +5,7 @@
 //  proprietary information of Component Factory Pty Ltd, 17/267 Nepean Hwy, 
 //  Seaford, Vic 3198, Australia and are supplied subject to licence terms.
 // 
-//  Version 4.4.0.2 	www.ComponentFactory.com
+//  Version 4.4.1.0 	www.ComponentFactory.com
 // *****************************************************************************
 
 using System;
@@ -33,7 +33,7 @@ namespace ComponentFactory.Krypton.Toolkit
 	[DefaultProperty("Text")]
     [DefaultBindingProperty("Text")]
     [LookupBindingProperties("DataSource", "DisplayMember", "ValueMember", "SelectedValue")]
-    [Designer("ComponentFactory.Krypton.Toolkit.KryptonComboBoxDesigner, ComponentFactory.Krypton.Design, Version=4.4.0.2, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e")]
+    [Designer("ComponentFactory.Krypton.Toolkit.KryptonComboBoxDesigner, ComponentFactory.Krypton.Design, Version=4.4.1.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e")]
     [DesignerCategory("code")]
     [Description("Displays an editable textbox with a drop-down list of permitted values.")]
     [ClassInterface(ClassInterfaceType.AutoDispatch)]

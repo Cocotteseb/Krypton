@@ -5,7 +5,7 @@
 //  proprietary information of Component Factory Pty Ltd, 17/267 Nepean Hwy, 
 //  Seaford, Vic 3198, Australia and are supplied subject to licence terms.
 // 
-//  Version 4.4.0.2 	www.ComponentFactory.com
+//  Version 4.4.1.0 	www.ComponentFactory.com
 // *****************************************************************************
 
 using System;
@@ -34,7 +34,7 @@ namespace ComponentFactory.Krypton.Toolkit
     [ToolboxBitmap(typeof(KryptonBreadCrumb), "ToolboxBitmaps.KryptonBreadCrumb.bmp")]
     [DefaultEvent("SelectedItemChanged")]
     [DefaultProperty("RootItem")]
-    [Designer("ComponentFactory.Krypton.Toolkit.KryptonBreadCrumbDesigner, ComponentFactory.Krypton.Design, Version=4.4.0.2, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e")]
+    [Designer("ComponentFactory.Krypton.Toolkit.KryptonBreadCrumbDesigner, ComponentFactory.Krypton.Design, Version=4.4.1.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e")]
     [DesignerCategory("code")]
     [Description("Flat navigation of hierarchical data.")]
     [ClassInterface(ClassInterfaceType.AutoDispatch)]

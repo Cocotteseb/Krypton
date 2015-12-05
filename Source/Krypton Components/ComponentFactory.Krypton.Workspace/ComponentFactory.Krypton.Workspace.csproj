@@ -90,9 +90,6 @@
     <Compile Include="General\StarSize.cs" />
     <Compile Include="General\Definitions.cs" />
     <Compile Include="General\StarNumber.cs" />
-    <Compile Include="Licence\LicenseInstallForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Palette\WorkspacePageMenu.cs" />
     <Compile Include="Palette\WorkspacePageMenuBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -113,10 +110,6 @@
     <None Include="Resources\help2.png" />
     <None Include="Resources\delete2.png" />
     <None Include="Resources\check2.png" />
-    <EmbeddedResource Include="Licence\LicenseInstallForm.resx">
-      <DependentUpon>LicenseInstallForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -157,13 +150,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ComponentFactory.Krypton.Navigator\ComponentFactory.Krypton.Navigator 2010.csproj">
+    <ProjectReference Include="..\ComponentFactory.Krypton.Navigator\ComponentFactory.Krypton.Navigator.csproj">
       <Project>{DC0DD714-4D19-4F31-A6D0-EA209D4F0EA8}</Project>
-      <Name>ComponentFactory.Krypton.Navigator 2010</Name>
+      <Name>ComponentFactory.Krypton.Navigator</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ComponentFactory.Krypton.Toolkit\ComponentFactory.Krypton.Toolkit 2010.csproj">
+    <ProjectReference Include="..\ComponentFactory.Krypton.Toolkit\ComponentFactory.Krypton.Toolkit.csproj">
       <Project>{96ECAECC-54F8-4AA5-8591-B443C2D9565F}</Project>
-      <Name>ComponentFactory.Krypton.Toolkit 2010</Name>
+      <Name>ComponentFactory.Krypton.Toolkit</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

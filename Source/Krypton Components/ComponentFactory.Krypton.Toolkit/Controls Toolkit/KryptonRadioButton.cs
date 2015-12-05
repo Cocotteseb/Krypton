@@ -5,7 +5,7 @@
 //  proprietary information of Component Factory Pty Ltd, 17/267 Nepean Hwy, 
 //  Seaford, Vic 3198, Australia and are supplied subject to licence terms.
 // 
-//  Version 4.4.0.2 	www.ComponentFactory.com
+//  Version 4.4.1.0 	www.ComponentFactory.com
 // *****************************************************************************
 
 using System;
@@ -30,7 +30,7 @@ namespace ComponentFactory.Krypton.Toolkit
     [DefaultEvent("CheckedChanged")]
 	[DefaultProperty("Text")]
     [DefaultBindingProperty("Checked")]
-    [Designer("ComponentFactory.Krypton.Toolkit.KryptonRadioButtonDesigner, ComponentFactory.Krypton.Design, Version=4.4.0.2, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e")]
+    [Designer("ComponentFactory.Krypton.Toolkit.KryptonRadioButtonDesigner, ComponentFactory.Krypton.Design, Version=4.4.1.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e")]
     [DesignerCategory("code")]
     [Description("Allow user to set or clear the associated option.")]
     [ClassInterface(ClassInterfaceType.AutoDispatch)]
