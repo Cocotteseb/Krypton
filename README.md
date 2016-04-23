@@ -1,15 +1,19 @@
 # Fork
 
-This is a fork of the original ComponentFactory Krypton library (https://github.com/ComponentFactory/Krypton), which gathers all the modifications I've made to the suite when building stuff for JDH Software (and when it was a commercial product). It is my humble contribution to the community and all pull requests are welcome.
+This is a fork of the original ComponentFactory Krypton library (https://github.com/ComponentFactory/Krypton), which gathers all the modifications I've made to the suite when building stuff for <a href="http://www.jdhsoftware.com">JDH Software</a> (and when Krypton was a commercial product from ComponentFactory). It is my humble contribution to the community and all pull requests are welcome.
+
+## Installation
+
+Check how to setup your dev environment <a href="https://github.com/Cocotteseb/Krypton/wiki">here</a>
 
 # Krypton OutlookGrid
 
-This fork is also the baseline of my project Krypton OutlookGrid - a new Krypton Datagridview with multi sorting/grouping and other cool things - (https://kryptonoutlookgrid.codeplex.com/)
-Check it out ;)
+This fork is also the baseline of my project Krypton OutlookGrid - a new Krypton Datagridview with multi sorting/grouping and other cool things
+Check it out there : <a href="https://github.com/Cocotteseb/Krypton-OutlookGrid">https://github.com/Cocotteseb/Krypton-OutlookGrid</a> ! :)
 
----- original readme
+![](/Images/KryptonOutlookGridSample.png)
 
-# Krypton Suite of .NET WinForms Controls
+# Krypton Suite of .NET WinForms Controls (original readme)
 
 The Kryton Suite of .NET WinForms controls are now freely available for use in personal or commerical projects. I developed and sold them from my company Component Factory until 2014 when the lack sales meant that selling the controls no longer made sense.
 
