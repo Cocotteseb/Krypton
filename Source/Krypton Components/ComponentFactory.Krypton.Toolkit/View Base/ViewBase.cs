@@ -44,6 +44,9 @@ namespace ComponentFactory.Krypton.Toolkit
         private IKeyController _keyController;
         private ISourceController _sourceController;
         private Control _owningControl;
+        //seb Dpi aware
+        private float _factorDpiX;
+        private float _factorDpiY;
 		#endregion
 
 		#region Identity
@@ -61,12 +64,18 @@ namespace ComponentFactory.Krypton.Toolkit
 
 			// Default the initial state
 			_elementState = PaletteState.Normal;
-		}
 
-		/// <summary>
-		/// Release resources.
-		/// </summary>
-		~ViewBase()
+            using (Graphics graphics = Graphics.FromHwnd(IntPtr.Zero))
+            {
+                _factorDpiX = graphics.DpiX > 96 ? (1f * graphics.DpiX / 96) : 1f;
+                _factorDpiY = graphics.DpiY > 96 ? (1f * graphics.DpiY / 96) : 1f; 
+            }
+        }
+
+        /// <summary>
+        /// Release resources.
+        /// </summary>
+        ~ViewBase()
 		{
 			// Only dispose of resources once
 			if (!IsDisposed)
@@ -222,7 +231,26 @@ namespace ComponentFactory.Krypton.Toolkit
             get { return _clientRect.Height; }
 			set { _clientRect.Height = value; }
 		}
-		#endregion
+
+        /// <summary>
+        /// Gets the DpiX of the view.
+        /// </summary>
+        public float FactorDpiX
+        {
+            [System.Diagnostics.DebuggerStepThrough]
+            get { return _factorDpiX; }
+        }
+
+        /// <summary>
+        /// Gets the DpiY of the view.
+        /// </summary>
+        public float FactorDpiY
+        {
+            [System.Diagnostics.DebuggerStepThrough]
+            get { return _factorDpiY; }
+        }
+
+        #endregion
 
         #region Component
         /// <summary>

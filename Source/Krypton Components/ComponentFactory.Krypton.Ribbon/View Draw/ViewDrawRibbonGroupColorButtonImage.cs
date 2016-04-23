@@ -27,8 +27,8 @@ namespace ComponentFactory.Krypton.Ribbon
                                               
     {
         #region Static Fields
-        private static readonly Size _smallSize = new Size(16, 16);
-        private static readonly Size _largeSize = new Size(32, 32);
+        private static Size _smallSize; //new Size(16, 16);
+        private static Size _largeSize;//new Size(32, 32);
         #endregion
 
         #region Instance Fields
@@ -54,12 +54,19 @@ namespace ComponentFactory.Krypton.Ribbon
             : base(ribbon)
         {
             Debug.Assert(ribbonColorButton != null);
+            
+            //Seb dpi aware
+            _smallSize = new Size((int)(16 * FactorDpiX), (int)(16 * FactorDpiY));
+            _largeSize = new Size((int)(32 * FactorDpiX), (int)(32 * FactorDpiY));
+
             _ribbonColorButton = ribbonColorButton;
             _selectedColor = ribbonColorButton.SelectedColor;
             _emptyBorderColor = ribbonColorButton.EmptyBorderColor;
             _selectedRectSmall = ribbonColorButton.SelectedRectSmall;
             _selectedRectLarge = ribbonColorButton.SelectedRectLarge;
             _large = large;
+
+          
         }        
 
 		/// <summary>

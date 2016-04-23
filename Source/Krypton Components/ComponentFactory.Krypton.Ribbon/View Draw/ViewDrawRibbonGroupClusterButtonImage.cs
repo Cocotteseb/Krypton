@@ -27,7 +27,7 @@ namespace ComponentFactory.Krypton.Ribbon
                                               
     {
         #region Static Fields
-        private static readonly Size _smallSize = new Size(16, 16);
+        private static Size _smallSize;// = new Size(16, 16);
         #endregion
 
         #region Instance Fields
@@ -45,6 +45,10 @@ namespace ComponentFactory.Krypton.Ribbon
             : base(ribbon)
         {
             Debug.Assert(ribbonButton != null);
+
+            //Seb dpi aware
+            _smallSize = new Size((int)(16 * FactorDpiX), (int)(16 * FactorDpiY));
+
             _ribbonButton = ribbonButton;
         }        
 

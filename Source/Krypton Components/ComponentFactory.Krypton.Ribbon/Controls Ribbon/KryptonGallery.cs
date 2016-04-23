@@ -155,9 +155,6 @@ namespace ComponentFactory.Krypton.Ribbon
 			// Create the view manager instance
             ViewManager = new ViewManager(this, _layoutDocker);
 
-            // Check the control is licenced
-            KryptonGalleryLicence.PerformLicenceChecking(this);
-
             // Set the default padding value
             base.Padding = new Padding(3);
         }

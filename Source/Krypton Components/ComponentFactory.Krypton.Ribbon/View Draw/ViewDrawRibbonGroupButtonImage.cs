@@ -23,36 +23,40 @@ namespace ComponentFactory.Krypton.Ribbon
 	/// <summary>
 	/// Draws either a large or small image from a group button.
 	/// </summary>
-    internal class ViewDrawRibbonGroupButtonImage : ViewDrawRibbonGroupImageBase
-                                              
-    {
+	internal class ViewDrawRibbonGroupButtonImage : ViewDrawRibbonGroupImageBase
+											  
+	{
         #region Static Fields
-        private static readonly Size _smallSize = new Size(16, 16);
-        private static readonly Size _largeSize = new Size(32, 32);
+        private static Size _smallSize;// = new Size(32 , 32); //new Size(16, 16);
+        private static Size _largeSize;// = new Size(48, 48);//new Size(32, 32);
         #endregion
 
         #region Instance Fields
         private KryptonRibbonGroupButton _ribbonButton;
-        private bool _large;
+		private bool _large;
         #endregion
 
         #region Identity
         /// <summary>
         /// Initialize a new instance of the ViewDrawRibbonGroupButtonImage class.
-		/// </summary>
+        /// </summary>
         /// <param name="ribbon">Reference to owning ribbon control.</param>
         /// <param name="ribbonButton">Reference to ribbon group button definition.</param>
         /// <param name="large">Show the large image.</param>
         public ViewDrawRibbonGroupButtonImage(KryptonRibbon ribbon,
-                                              KryptonRibbonGroupButton ribbonButton,
-                                              bool large)
-            : base(ribbon)
-        {
-            Debug.Assert(ribbonButton != null);
+											  KryptonRibbonGroupButton ribbonButton,
+											  bool large)
+			: base(ribbon)
+		{
+			Debug.Assert(ribbonButton != null);
+
+            //Seb dpi aware
+            _smallSize = new Size((int)(16 * FactorDpiX), (int)(16 * FactorDpiY)); 
+            _largeSize = new Size((int)(32 * FactorDpiX), (int)(32 * FactorDpiY));
 
             _ribbonButton = ribbonButton;
-            _large = large;
-        }        
+			_large = large;
+		}        
 
 		/// <summary>
 		/// Obtains the String representation of this instance.
@@ -61,48 +65,48 @@ namespace ComponentFactory.Krypton.Ribbon
 		public override string ToString()
 		{
 			// Return the class name and instance identifier
-            return "ViewDrawRibbonGroupButtonImage:" + Id;
+			return "ViewDrawRibbonGroupButtonImage:" + Id;
 		}
-        #endregion
+		#endregion
 
-        #region Protected
-        /// <summary>
-        /// Gets the size to draw the image.
-        /// </summary>
-        protected override Size DrawSize 
-        {
-            get
-            {
-                if (_large)
-                    return _largeSize;
-                else
-                    return _smallSize;
-            }
-        }
+		#region Protected
+		/// <summary>
+		/// Gets the size to draw the image.
+		/// </summary>
+		protected override Size DrawSize 
+		{
+			get
+			{
+				if (_large)
+					return _largeSize;
+				else
+					return _smallSize;
+			}
+		}
 
-        /// <summary>
-        /// Gets the image to be drawn.
-        /// </summary>
-        protected override Image DrawImage 
-        {
-            get
-            {
-                if (_ribbonButton.KryptonCommand != null)
-                {
-                    if (_large)
-                        return _ribbonButton.KryptonCommand.ImageLarge;
-                    else
-                        return _ribbonButton.KryptonCommand.ImageSmall;
-                }
-                else
-                {
-                    if (_large)
-                        return _ribbonButton.ImageLarge;
-                    else
-                        return _ribbonButton.ImageSmall;
-                }
-            }
-        }
-        #endregion
-    }
+		/// <summary>
+		/// Gets the image to be drawn.
+		/// </summary>
+		protected override Image DrawImage 
+		{
+			get
+			{
+				if (_ribbonButton.KryptonCommand != null)
+				{
+					if (_large)
+						return _ribbonButton.KryptonCommand.ImageLarge;
+					else
+						return _ribbonButton.KryptonCommand.ImageSmall;
+				}
+				else
+				{
+					if (_large)
+						return _ribbonButton.ImageLarge;
+					else
+						return _ribbonButton.ImageSmall;
+				}
+			}
+		}
+		#endregion
+	}
 }

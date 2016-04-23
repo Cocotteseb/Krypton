@@ -16,7 +16,7 @@ namespace ComponentFactory.Krypton.Navigator
 	/// <summary>
 	/// Implements the NavigatorMode.Group view.
 	/// </summary>
-    internal class ViewBuilderGroup : ViewBuilderLicence
+    internal class ViewBuilderGroup : ViewBuilderBase
 	{
 		#region Instance Fields
 		private ViewBase _oldRoot;
