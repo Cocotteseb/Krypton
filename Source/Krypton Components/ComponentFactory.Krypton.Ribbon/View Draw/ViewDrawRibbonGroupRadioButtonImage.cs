@@ -26,8 +26,8 @@ namespace ComponentFactory.Krypton.Ribbon
     internal class ViewDrawRibbonGroupRadioButtonImage : ViewComposite                                              
     {
         #region Static Fields
-        private static readonly Size _smallSize = new Size(16, 16);
-        private static readonly Size _largeSize = new Size(32, 32);
+        private static Size _smallSize;// = new Size(16, 16);
+        private static Size _largeSize;// = new Size(32, 32);
         #endregion
 
         #region Instance Fields
@@ -48,6 +48,10 @@ namespace ComponentFactory.Krypton.Ribbon
                                                    bool large)
         {
             Debug.Assert(ribbonRadioButton != null);
+
+            //Seb dpi aware
+            _smallSize = new Size((int)(16 * FactorDpiX), (int)(16 * FactorDpiY));
+            _largeSize = new Size((int)(32 * FactorDpiX), (int)(32 * FactorDpiY));
 
             // Remember incoming parameters
             _ribbonRadioButton = ribbonRadioButton;

@@ -214,6 +214,14 @@ namespace ComponentFactory.Krypton.Toolkit
             // Yes, we want to be drawn double buffered by default
             DoubleBuffered = true;
 
+            //Seb : for DPi Correction
+            using (Graphics g = CreateGraphics())
+            {
+                //float factorX = g.DpiX > 96 ? (1f * g.DpiX / 96) : 1f;
+                float factorY = g.DpiY > 96 ? (1f * g.DpiY / 96) : 1f;
+                ColumnHeadersHeight = (int)(ColumnHeadersHeight * factorY);
+            }
+
             SetupVisuals();
             SetupViewAndStates();
             SetupDefaults();

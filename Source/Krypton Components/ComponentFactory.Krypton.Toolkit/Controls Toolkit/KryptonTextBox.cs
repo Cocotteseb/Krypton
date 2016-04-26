@@ -22,13 +22,13 @@ using System.Security;
 
 namespace ComponentFactory.Krypton.Toolkit
 {
-	/// <summary>
+    /// <summary>
     /// Provide a TextBox with Krypton styling applied.
-	/// </summary>
-	[ToolboxItem(true)]
+    /// </summary>
+    [ToolboxItem(true)]
     [ToolboxBitmap(typeof(KryptonTextBox), "ToolboxBitmaps.KryptonTextBox.bmp")]
     [DefaultEvent("TextChanged")]
-	[DefaultProperty("Text")]
+    [DefaultProperty("Text")]
     [DefaultBindingProperty("Text")]
     [Designer("ComponentFactory.Krypton.Toolkit.KryptonTextBoxDesigner, ComponentFactory.Krypton.Design, Version=4.4.1.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e")]
     [DesignerCategory("code")]
@@ -82,8 +82,8 @@ namespace ComponentFactory.Krypton.Toolkit
             public bool MouseOver
             {
                 get { return _mouseOver; }
-                
-                set 
+
+                set
                 {
                     // Only interested in changes
                     if (_mouseOver != value)
@@ -298,8 +298,8 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <summary>
         /// Collection for managing ButtonSpecAny instances.
         /// </summary>
-        public class TextBoxButtonSpecCollection : ButtonSpecCollection<ButtonSpecAny> 
-        { 
+        public class TextBoxButtonSpecCollection : ButtonSpecCollection<ButtonSpecAny>
+        {
             #region Identity
             /// <summary>
             /// Initialize a new instance of the TextBoxButtonSpecCollection class.
@@ -528,7 +528,7 @@ namespace ComponentFactory.Krypton.Toolkit
         }
         #endregion
 
-		#region Public
+        #region Public
         /// <summary>
         /// Gets and sets if the control is in the tab chain.
         /// </summary>
@@ -575,12 +575,14 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <summary>
         /// Gets and sets a value indicating if the control is automatically sized.
         /// </summary>
-        [Browsable(false)]
-        [EditorBrowsable(EditorBrowsableState.Never)]
+        //[Browsable(false)]
+        //[EditorBrowsable(EditorBrowsableState.Never)]
+        [Browsable(true)]
+        [EditorBrowsable(EditorBrowsableState.Always)]
         public override bool AutoSize
         {
             get { return _autoSize; }
-            
+
             set
             {
                 if (_autoSize != value)
@@ -985,24 +987,24 @@ namespace ComponentFactory.Krypton.Toolkit
 		/// Gets and sets the input control style.
 		/// </summary>
 		[Category("Visuals")]
-		[Description("Input control style.")]
+        [Description("Input control style.")]
         public InputControlStyle InputControlStyle
-		{
-            get 
+        {
+            get
             {
-                return _inputControlStyle; 
+                return _inputControlStyle;
             }
 
-			set
-			{
+            set
+            {
                 if (_inputControlStyle != value)
-				{
+                {
                     _inputControlStyle = value;
                     _stateCommon.SetStyles(value);
-					PerformNeedPaint(true);
-				}
-			}
-		}
+                    PerformNeedPaint(true);
+                }
+            }
+        }
 
         private void ResetInputControlStyle()
         {
@@ -1093,38 +1095,38 @@ namespace ComponentFactory.Krypton.Toolkit
         {
             return !_stateCommon.IsDefault;
         }
-        
+
         /// <summary>
         /// Gets access to the disabled textbox appearance entries.
-		/// </summary>
-		[Category("Visuals")]
-		[Description("Overrides for defining disabled textbox appearance.")]
-		[DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
+        /// </summary>
+        [Category("Visuals")]
+        [Description("Overrides for defining disabled textbox appearance.")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         public PaletteInputControlTripleStates StateDisabled
-		{
-			get { return _stateDisabled; }
-		}
+        {
+            get { return _stateDisabled; }
+        }
 
-		private bool ShouldSerializeStateDisabled()
-		{
-			return !_stateDisabled.IsDefault;
-		}
+        private bool ShouldSerializeStateDisabled()
+        {
+            return !_stateDisabled.IsDefault;
+        }
 
-		/// <summary>
+        /// <summary>
         /// Gets access to the normal textbox appearance entries.
-		/// </summary>
-		[Category("Visuals")]
-		[Description("Overrides for defining normal textbox appearance.")]
-		[DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
+        /// </summary>
+        [Category("Visuals")]
+        [Description("Overrides for defining normal textbox appearance.")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         public PaletteInputControlTripleStates StateNormal
-		{
-			get { return _stateNormal; }
-		}
+        {
+            get { return _stateNormal; }
+        }
 
-		private bool ShouldSerializeStateNormal()
-		{
-			return !_stateNormal.IsDefault;
-		}
+        private bool ShouldSerializeStateNormal()
+        {
+            return !_stateNormal.IsDefault;
+        }
 
         /// <summary>
         /// Gets access to the active textbox appearance entries.
@@ -1318,12 +1320,12 @@ namespace ComponentFactory.Krypton.Toolkit
         [EditorBrowsable(EditorBrowsableState.Never)]
         public bool IsActive
         {
-            get 
+            get
             {
                 if (_fixedActive != null)
                     return _fixedActive.Value;
                 else
-                    return (DesignMode || AlwaysActive || ContainsFocus || _mouseOver || _textBox.MouseOver); 
+                    return (DesignMode || AlwaysActive || ContainsFocus || _mouseOver || _textBox.MouseOver);
             }
         }
 
@@ -1362,11 +1364,11 @@ namespace ComponentFactory.Krypton.Toolkit
                 Size retSize = ViewManager.GetPreferredSize(Renderer, proposedSize);
 
                 // Apply the maximum sizing
-                if (MaximumSize.Width > 0)  retSize.Width = Math.Min(MaximumSize.Width, retSize.Width);
+                if (MaximumSize.Width > 0) retSize.Width = Math.Min(MaximumSize.Width, retSize.Width);
                 if (MaximumSize.Height > 0) retSize.Height = Math.Min(MaximumSize.Height, retSize.Width);
 
                 // Apply the minimum sizing
-                if (MinimumSize.Width > 0)  retSize.Width = Math.Max(MinimumSize.Width, retSize.Width);
+                if (MinimumSize.Width > 0) retSize.Width = Math.Max(MinimumSize.Width, retSize.Width);
                 if (MinimumSize.Height > 0) retSize.Height = Math.Max(MinimumSize.Height, retSize.Height);
 
                 return retSize;
@@ -1382,16 +1384,16 @@ namespace ComponentFactory.Krypton.Toolkit
 		/// Gets the rectangle that represents the display area of the control.
 		/// </summary>
 		public override Rectangle DisplayRectangle
-		{
-			get
-			{
+        {
+            get
+            {
                 // Ensure that the layout is calculated in order to know the remaining display space
                 ForceViewLayout();
 
                 // The inside text box is the client rectangle size
                 return new Rectangle(_textBox.Location, _textBox.Size);
-			}
-		}
+            }
+        }
 
         /// <summary>
         /// Internal design time method.
@@ -1573,8 +1575,8 @@ namespace ComponentFactory.Krypton.Toolkit
 		/// </summary>
 		/// <param name="e">An EventArgs that contains the event data.</param>
 		protected override void OnEnabledChanged(EventArgs e)
-		{
-			// Change in enabled state requires a layout and repaint
+        {
+            // Change in enabled state requires a layout and repaint
             UpdateStateAndPalettes();
 
             // Update view elements
@@ -1713,8 +1715,8 @@ namespace ComponentFactory.Krypton.Toolkit
         /// <param name="width">The new Width property value of the control.</param>
         /// <param name="height">The new Height property value of the control.</param>
         /// <param name="specified">A bitwise combination of the BoundsSpecified values.</param>
-        protected override void SetBoundsCore(int x, int y, 
-                                              int width, int height, 
+        protected override void SetBoundsCore(int x, int y,
+                                              int width, int height,
                                               BoundsSpecified specified)
         {
             // Do we need to prevent the height from being altered?
@@ -1734,9 +1736,32 @@ namespace ComponentFactory.Krypton.Toolkit
                 height = PreferredHeight;
             }
             else
+            {
                 _cachedHeight = height;
-           
+            }
+
             base.SetBoundsCore(x, y, width, height, specified);
+
+
+
+
+
+            //// If setting the actual height
+            //if ((specified & BoundsSpecified.Height) == BoundsSpecified.Height)
+            //{
+            //    // First time the height is set, remember it
+            //    if (_cachedHeight == -1)
+            //        _cachedHeight = PreferredHeight;
+
+            //    // Override the actual height used
+            //    height = PreferredHeight;
+            //}
+
+            //// If setting the actual height then cache it for later
+            //if ((specified & BoundsSpecified.Height) == BoundsSpecified.Height)
+            //    _cachedHeight = height;
+
+            //base.SetBoundsCore(x, y, width, height, specified);
         }
 
         /// <summary>
@@ -1844,7 +1869,7 @@ namespace ComponentFactory.Krypton.Toolkit
             // Get the correct palette settings to use
             IPaletteTriple tripleState = GetTripleState();
             _drawDockerOuter.SetPalettes(tripleState.PaletteBack, tripleState.PaletteBorder);
-            
+
             // Update enabled state
             _drawDockerOuter.Enabled = Enabled;
 

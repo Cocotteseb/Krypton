@@ -26,6 +26,7 @@ namespace ComponentFactory.Krypton.Ribbon
                                               
     {
         #region Static Fields
+        //TODO dpi aware !!
         private static readonly Size _viewSize_2007 = new Size(30, 31);
         private static readonly Size _viewSize_2010 = new Size(31, 31);
         private static readonly Size _imageSize = new Size(16, 16);

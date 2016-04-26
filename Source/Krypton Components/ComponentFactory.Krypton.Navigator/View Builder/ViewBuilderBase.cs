@@ -97,9 +97,6 @@ namespace ComponentFactory.Krypton.Navigator
 			Debug.Assert(redirector != null);
 			Debug.Assert(_constructed == false);
 
-            // Check for licence and show serial key form if appropriate
-            PerformLicenceChecking(navigator);
-
             // Save provided references
 			_navigator = navigator;
 			_manager = manager;
@@ -773,11 +770,6 @@ namespace ComponentFactory.Krypton.Navigator
             }
         }
 
-        /// <summary>
-        /// Perform licence checking actions.
-        /// </summary>
-        /// <param name="navigator">Navigator control reference.</param>
-        protected virtual void PerformLicenceChecking(KryptonNavigator navigator) {}
         #endregion
 
         #region Static Methods
