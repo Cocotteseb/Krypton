@@ -2148,12 +2148,6 @@
             </summary>
             <param name="e">A MouseEventArgs containing the event data.</param>
         </member>
-        <member name="M:ComponentFactory.Krypton.Ribbon.KryptonGalleryLicence.PerformLicenceChecking(ComponentFactory.Krypton.Ribbon.KryptonGallery)">
-            <summary>
-            Perform licence checking actions.
-            </summary>
-            <param name="gallery">Gallery control reference.</param>
-        </member>
         <member name="T:ComponentFactory.Krypton.Ribbon.KryptonGalleryRange">
             <summary>
             Represents a single gallery range.

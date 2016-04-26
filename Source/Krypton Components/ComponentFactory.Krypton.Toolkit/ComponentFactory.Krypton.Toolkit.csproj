@@ -274,9 +274,6 @@
     <Compile Include="Palette Base\PaletteRedirect\PaletteRedirectBorderEdge.cs" />
     <Compile Include="Palette Base\PaletteRedirect\PaletteRedirectBorder.cs" />
     <Compile Include="Palette Base\PaletteElementColor\PaletteElementColor.cs" />
-    <Compile Include="Palette Builtin\PaletteOffice2013.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Palette Builtin\PaletteOffice2013Base.cs">
       <SubType>Component</SubType>
     </Compile>

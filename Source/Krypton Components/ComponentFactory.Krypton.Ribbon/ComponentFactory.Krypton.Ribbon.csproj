@@ -113,7 +113,6 @@
     <Compile Include="Controller\GroupRadioButtonController.cs" />
     <Compile Include="Controller\GroupCheckBoxController.cs" />
     <Compile Include="Controller\ViewHighlightController.cs" />
-    <Compile Include="Controls Ribbon\KryptonGalleryLicence.cs" />
     <Compile Include="Controls Ribbon\KryptonGalleryRange.cs" />
     <Compile Include="Controls Ribbon\KryptonGalleryRangeCollection.cs" />
     <Compile Include="Controls Ribbon\KryptonGallery.cs" />

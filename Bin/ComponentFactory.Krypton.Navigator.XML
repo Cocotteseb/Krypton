@@ -7539,11 +7539,6 @@
             <param name="sender">Source of the event.</param>
             <param name="e">Property changed details.</param>
         </member>
-        <member name="T:ComponentFactory.Krypton.Navigator.ViewBuilderLicence">
-            <summary>
-            Extend the base class with licence checking.
-            </summary>
-        </member>
         <member name="T:ComponentFactory.Krypton.Navigator.ViewBuilderBarCheckButtonGroupOnly">
             <summary>
             Implements the NavigatorMode.BarCheckButtonGroupOnly mode.

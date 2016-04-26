@@ -199,7 +199,6 @@
     <Compile Include="View Builder\ViewBuilderStackCheckButtonHeaderGroup.cs" />
     <Compile Include="View Builder\ViewBuilderStackCheckButtonGroup.cs" />
     <Compile Include="View Builder\ViewBuilderStackCheckButtonBase.cs" />
-    <Compile Include="View Builder\ViewBuilderLicence.cs" />
     <Compile Include="View Builder\ViewBuilderBarCheckButtonGroupOnly.cs" />
     <Compile Include="View Builder\ViewBuilderBarCheckButtonOnly.cs" />
     <Compile Include="View Builder\ViewBuilderBarCheckButtonGroupInside.cs" />
