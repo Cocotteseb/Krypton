@@ -21,24 +21,5 @@ namespace ComponentFactory.Krypton.Toolkit
             AutoResizeHandles = true;
         }            
 		#endregion
-
-        #region Public Overrides
-        /// <summary>
-        ///  Gets the design-time action lists supported by the component associated with the designer.
-        /// </summary>
-        //public override DesignerActionListCollection ActionLists
-        //{
-        //    get
-        //    {
-        //        // Create a collection of action lists
-        //        DesignerActionListCollection actionLists = new DesignerActionListCollection();
-
-        //        // Add the wrpa label specific list
-        //        actionLists.Add(new KryptonWrapLabelActionList(this));
-
-        //        return actionLists;
-        //    }
-        //}
-        #endregion
     }
 }

@@ -9,16 +9,9 @@
 // *****************************************************************************
 
 using System;
-using System.IO;
-using System.Text;
-using System.Drawing;
 using System.Windows.Forms;
-using System.ComponentModel;
-using System.Collections.Generic;
-using System.Diagnostics;
 using ComponentFactory.Krypton.Toolkit;
 using ComponentFactory.Krypton.Navigator;
-using ComponentFactory.Krypton.Workspace;
 using ComponentFactory.Krypton.Docking;
 
 namespace DockingFlags
