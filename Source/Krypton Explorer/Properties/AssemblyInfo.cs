@@ -9,16 +9,13 @@
 // *****************************************************************************
 
 using System;
-using System.Security;
 using System.Resources;
 using System.Reflection;
-using System.Diagnostics;
-using System.Security.Permissions;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyVersion("4.4.0.0")]
-[assembly: AssemblyFileVersion("4.4.0.0")]
+[assembly: AssemblyVersion("4.4.1.0")]
+[assembly: AssemblyFileVersion("4.4.1.0")]
 [assembly: AssemblyInformationalVersion("4.4.0.0")]
 [assembly: AssemblyCopyright("© Component Factory Pty Ltd 2012. All rights reserved.")]
 [assembly: AssemblyProduct("Krypton Explorer")]
@@ -31,10 +28,3 @@ using System.Runtime.InteropServices;
 [assembly: StringFreezing]
 [assembly: ComVisible(false)]
 [assembly: CLSCompliant(true)]
-[assembly: AllowPartiallyTrustedCallers()]
-[assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
-[assembly: Dependency("System", LoadHint.Always)]
-[assembly: Dependency("System.Drawing", LoadHint.Always)]
-[assembly: Dependency("System.Windows.Forms", LoadHint.Always)]
-[assembly: Dependency("ComponentFactory.Krypton.Toolkit", LoadHint.Always)]
-[assembly: Dependency("ComponentFactory.Krypton.Navigator", LoadHint.Always)]

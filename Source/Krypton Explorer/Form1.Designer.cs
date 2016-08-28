@@ -151,7 +151,6 @@
             this.labelRibbonFeatureExamples = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.labelRibbonPage = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonPageApplicatons = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.linkSerialKeys = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
             this.linkPaletteUpgradeTool = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
             this.labelApplicationsPage = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.labelApplications = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -165,20 +164,6 @@
             this.linkDockingExamplesSource2010 = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
             this.linkRibbonExamplesSource2010 = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
             this.linkNavigatorExamplesSource2010 = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
-            this.kryptonPage4 = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.linkToolkitExamples2Source2008 = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
-            this.linkToolkitExamplesSource2008 = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
-            this.linkWorkspaceExamplesSource2008 = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
-            this.linkDockingExamplesSource2008 = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
-            this.linkRibbonExamplesSource2008 = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
-            this.linkNavigatorExamplesSource2008 = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
-            this.kryptonPage5 = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.linkToolkitExamples2Source2005 = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
-            this.linkDockingExamplesSource2005 = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
-            this.linkToolkitExamplesSource2005 = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
-            this.linkNavigatorExamplesSource2005 = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
-            this.linkWorkspaceExamplesSource2005 = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
-            this.linkRibbonExamplesSource2005 = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
             this.linkDockingChangeList = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
             this.linkWorkspaceChangeList = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
             this.linkRibbonChangeList = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
@@ -187,18 +172,8 @@
             this.labelResourcesInternet = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.labelResourcesInstalled = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.linkToolkitChangeList = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
-            this.linkWebsite = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
             this.linkBlog = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
             this.linkDocumentation = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
-            this.linkScreencasts = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
-            this.linkForums = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
-            this.kryptonPageBuy = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.linkSuitePurchase = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
-            this.labelBuyNotes = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.labelBuyNavigator3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.labelBuyNavigator2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.labelBuyNavigator1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.labelBuyPage = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonButtonClose = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonPanelTop = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.labelKryptonExplorer = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -234,12 +209,6 @@
             this.kryptonNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage6)).BeginInit();
             this.kryptonPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPage4)).BeginInit();
-            this.kryptonPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPage5)).BeginInit();
-            this.kryptonPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPageBuy)).BeginInit();
-            this.kryptonPageBuy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanelTop)).BeginInit();
             this.kryptonPanelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRight)).BeginInit();
@@ -280,10 +249,9 @@
             this.kryptonPageNavigator,
             this.kryptonPageRibbon,
             this.kryptonPageApplicatons,
-            this.kryptonPageResources,
-            this.kryptonPageBuy});
+            this.kryptonPageResources});
             this.kryptonNavigator.Panel.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelAlternate;
-            this.kryptonNavigator.SelectedIndex = 0;
+            this.kryptonNavigator.SelectedIndex = 6;
             this.kryptonNavigator.Size = new System.Drawing.Size(644, 386);
             this.kryptonNavigator.StateCommon.Bar.BarPaddingOutside = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.kryptonNavigator.StateCommon.Bar.CheckButtonGap = 5;
@@ -1751,7 +1719,6 @@
             // kryptonPageApplicatons
             // 
             this.kryptonPageApplicatons.AutoHiddenSlideSize = new System.Drawing.Size(150, 150);
-            this.kryptonPageApplicatons.Controls.Add(this.linkSerialKeys);
             this.kryptonPageApplicatons.Controls.Add(this.linkPaletteUpgradeTool);
             this.kryptonPageApplicatons.Controls.Add(this.labelApplicationsPage);
             this.kryptonPageApplicatons.Controls.Add(this.labelApplications);
@@ -1767,16 +1734,6 @@
             this.kryptonPageApplicatons.TextTitle = "";
             this.kryptonPageApplicatons.ToolTipTitle = "Page ToolTip";
             this.kryptonPageApplicatons.UniqueName = "F1D9B8A768F74629F1D9B8A768F74629";
-            // 
-            // linkSerialKeys
-            // 
-            this.linkSerialKeys.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
-            this.linkSerialKeys.Location = new System.Drawing.Point(20, 117);
-            this.linkSerialKeys.Name = "linkSerialKeys";
-            this.linkSerialKeys.Size = new System.Drawing.Size(115, 20);
-            this.linkSerialKeys.TabIndex = 3;
-            this.linkSerialKeys.Values.Text = "Krypton Serial Keys";
-            this.linkSerialKeys.LinkClicked += new System.EventHandler(this.linkSerialKeys_LinkClicked);
             // 
             // linkPaletteUpgradeTool
             // 
@@ -1832,11 +1789,8 @@
             this.kryptonPageResources.Controls.Add(this.labelResourcesInternet);
             this.kryptonPageResources.Controls.Add(this.labelResourcesInstalled);
             this.kryptonPageResources.Controls.Add(this.linkToolkitChangeList);
-            this.kryptonPageResources.Controls.Add(this.linkWebsite);
             this.kryptonPageResources.Controls.Add(this.linkBlog);
             this.kryptonPageResources.Controls.Add(this.linkDocumentation);
-            this.kryptonPageResources.Controls.Add(this.linkScreencasts);
-            this.kryptonPageResources.Controls.Add(this.linkForums);
             this.kryptonPageResources.Flags = 62;
             this.kryptonPageResources.ImageLarge = ((System.Drawing.Image)(resources.GetObject("kryptonPageResources.ImageLarge")));
             this.kryptonPageResources.ImageMedium = ((System.Drawing.Image)(resources.GetObject("kryptonPageResources.ImageMedium")));
@@ -1862,9 +1816,7 @@
             this.kryptonNavigator1.NavigatorMode = ComponentFactory.Krypton.Navigator.NavigatorMode.BarCheckButtonGroupOutside;
             this.kryptonNavigator1.PageBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelRibbonInactive;
             this.kryptonNavigator1.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
-            this.kryptonPage6,
-            this.kryptonPage4,
-            this.kryptonPage5});
+            this.kryptonPage6});
             this.kryptonNavigator1.SelectedIndex = 0;
             this.kryptonNavigator1.Size = new System.Drawing.Size(447, 163);
             this.kryptonNavigator1.StateCommon.RibbonTab.Content.LongText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
@@ -1889,7 +1841,7 @@
             this.kryptonPage6.Size = new System.Drawing.Size(445, 134);
             this.kryptonPage6.StateCommon.RibbonTab.TabDraw.BackColor2 = System.Drawing.Color.White;
             this.kryptonPage6.StateCommon.RibbonTab.TabDraw.BackColor3 = System.Drawing.Color.White;
-            this.kryptonPage6.Text = "Visual Studio 2010";
+            this.kryptonPage6.Text = "Visual Studio";
             this.kryptonPage6.TextDescription = "";
             this.kryptonPage6.ToolTipTitle = "Page ToolTip";
             this.kryptonPage6.UniqueName = "96F81E585C324A71BB9A472A2C3803FA";
@@ -1959,176 +1911,6 @@
             this.linkNavigatorExamplesSource2010.UseMnemonic = false;
             this.linkNavigatorExamplesSource2010.Values.Text = "Example Source Code - Navigator";
             this.linkNavigatorExamplesSource2010.LinkClicked += new System.EventHandler(this.linkNavigatorExamplesSource2010_LinkClicked);
-            // 
-            // kryptonPage4
-            // 
-            this.kryptonPage4.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.kryptonPage4.Controls.Add(this.linkToolkitExamples2Source2008);
-            this.kryptonPage4.Controls.Add(this.linkToolkitExamplesSource2008);
-            this.kryptonPage4.Controls.Add(this.linkWorkspaceExamplesSource2008);
-            this.kryptonPage4.Controls.Add(this.linkDockingExamplesSource2008);
-            this.kryptonPage4.Controls.Add(this.linkRibbonExamplesSource2008);
-            this.kryptonPage4.Controls.Add(this.linkNavigatorExamplesSource2008);
-            this.kryptonPage4.Flags = 65534;
-            this.kryptonPage4.LastVisibleSet = true;
-            this.kryptonPage4.MinimumSize = new System.Drawing.Size(50, 50);
-            this.kryptonPage4.Name = "kryptonPage4";
-            this.kryptonPage4.Size = new System.Drawing.Size(445, 134);
-            this.kryptonPage4.Text = "Visual Studio 2008";
-            this.kryptonPage4.TextDescription = "";
-            this.kryptonPage4.ToolTipTitle = "Page ToolTip";
-            this.kryptonPage4.UniqueName = "F2097AB8F30B4FB46781398887A9E176";
-            // 
-            // linkToolkitExamples2Source2008
-            // 
-            this.linkToolkitExamples2Source2008.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
-            this.linkToolkitExamples2Source2008.Location = new System.Drawing.Point(127, 28);
-            this.linkToolkitExamples2Source2008.Name = "linkToolkitExamples2Source2008";
-            this.linkToolkitExamples2Source2008.Size = new System.Drawing.Size(188, 20);
-            this.linkToolkitExamples2Source2008.TabIndex = 12;
-            this.linkToolkitExamples2Source2008.UseMnemonic = false;
-            this.linkToolkitExamples2Source2008.Values.Text = "Example Source Code - Toolkit II";
-            this.linkToolkitExamples2Source2008.LinkClicked += new System.EventHandler(this.linkToolkitExamples2Source2008_LinkClicked);
-            // 
-            // linkToolkitExamplesSource2008
-            // 
-            this.linkToolkitExamplesSource2008.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
-            this.linkToolkitExamplesSource2008.Location = new System.Drawing.Point(127, 8);
-            this.linkToolkitExamplesSource2008.Name = "linkToolkitExamplesSource2008";
-            this.linkToolkitExamplesSource2008.Size = new System.Drawing.Size(178, 20);
-            this.linkToolkitExamplesSource2008.TabIndex = 11;
-            this.linkToolkitExamplesSource2008.UseMnemonic = false;
-            this.linkToolkitExamplesSource2008.Values.Text = "Example Source Code - Toolkit ";
-            this.linkToolkitExamplesSource2008.LinkClicked += new System.EventHandler(this.linkToolkitExamplesSource2008_LinkClicked);
-            // 
-            // linkWorkspaceExamplesSource2008
-            // 
-            this.linkWorkspaceExamplesSource2008.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
-            this.linkWorkspaceExamplesSource2008.Location = new System.Drawing.Point(127, 68);
-            this.linkWorkspaceExamplesSource2008.Name = "linkWorkspaceExamplesSource2008";
-            this.linkWorkspaceExamplesSource2008.Size = new System.Drawing.Size(201, 20);
-            this.linkWorkspaceExamplesSource2008.TabIndex = 14;
-            this.linkWorkspaceExamplesSource2008.UseMnemonic = false;
-            this.linkWorkspaceExamplesSource2008.Values.Text = "Example Source Code - Workspace";
-            this.linkWorkspaceExamplesSource2008.LinkClicked += new System.EventHandler(this.linkWorkspaceExamplesSource2008_LinkClicked);
-            // 
-            // linkDockingExamplesSource2008
-            // 
-            this.linkDockingExamplesSource2008.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
-            this.linkDockingExamplesSource2008.Location = new System.Drawing.Point(127, 48);
-            this.linkDockingExamplesSource2008.Name = "linkDockingExamplesSource2008";
-            this.linkDockingExamplesSource2008.Size = new System.Drawing.Size(186, 20);
-            this.linkDockingExamplesSource2008.TabIndex = 13;
-            this.linkDockingExamplesSource2008.UseMnemonic = false;
-            this.linkDockingExamplesSource2008.Values.Text = "Example Source Code - Docking";
-            this.linkDockingExamplesSource2008.LinkClicked += new System.EventHandler(this.linkDockingExamplesSource2008_LinkClicked);
-            // 
-            // linkRibbonExamplesSource2008
-            // 
-            this.linkRibbonExamplesSource2008.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
-            this.linkRibbonExamplesSource2008.Location = new System.Drawing.Point(127, 108);
-            this.linkRibbonExamplesSource2008.Name = "linkRibbonExamplesSource2008";
-            this.linkRibbonExamplesSource2008.Size = new System.Drawing.Size(180, 20);
-            this.linkRibbonExamplesSource2008.TabIndex = 16;
-            this.linkRibbonExamplesSource2008.UseMnemonic = false;
-            this.linkRibbonExamplesSource2008.Values.Text = "Example Source Code - Ribbon";
-            this.linkRibbonExamplesSource2008.LinkClicked += new System.EventHandler(this.linkRibbonExamplesSource2008_LinkClicked);
-            // 
-            // linkNavigatorExamplesSource2008
-            // 
-            this.linkNavigatorExamplesSource2008.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
-            this.linkNavigatorExamplesSource2008.Location = new System.Drawing.Point(127, 88);
-            this.linkNavigatorExamplesSource2008.Name = "linkNavigatorExamplesSource2008";
-            this.linkNavigatorExamplesSource2008.Size = new System.Drawing.Size(194, 20);
-            this.linkNavigatorExamplesSource2008.TabIndex = 15;
-            this.linkNavigatorExamplesSource2008.UseMnemonic = false;
-            this.linkNavigatorExamplesSource2008.Values.Text = "Example Source Code - Navigator";
-            this.linkNavigatorExamplesSource2008.LinkClicked += new System.EventHandler(this.linkNavigatorExamplesSource2008_LinkClicked);
-            // 
-            // kryptonPage5
-            // 
-            this.kryptonPage5.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.kryptonPage5.Controls.Add(this.linkToolkitExamples2Source2005);
-            this.kryptonPage5.Controls.Add(this.linkDockingExamplesSource2005);
-            this.kryptonPage5.Controls.Add(this.linkToolkitExamplesSource2005);
-            this.kryptonPage5.Controls.Add(this.linkNavigatorExamplesSource2005);
-            this.kryptonPage5.Controls.Add(this.linkWorkspaceExamplesSource2005);
-            this.kryptonPage5.Controls.Add(this.linkRibbonExamplesSource2005);
-            this.kryptonPage5.Flags = 65534;
-            this.kryptonPage5.LastVisibleSet = true;
-            this.kryptonPage5.MinimumSize = new System.Drawing.Size(50, 50);
-            this.kryptonPage5.Name = "kryptonPage5";
-            this.kryptonPage5.Size = new System.Drawing.Size(445, 134);
-            this.kryptonPage5.Text = "Visual Studio 2005";
-            this.kryptonPage5.TextDescription = "";
-            this.kryptonPage5.ToolTipTitle = "Page ToolTip";
-            this.kryptonPage5.UniqueName = "2E19CC3DC69246A5E09FB49A834062AF";
-            // 
-            // linkToolkitExamples2Source2005
-            // 
-            this.linkToolkitExamples2Source2005.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
-            this.linkToolkitExamples2Source2005.Location = new System.Drawing.Point(240, 28);
-            this.linkToolkitExamples2Source2005.Name = "linkToolkitExamples2Source2005";
-            this.linkToolkitExamples2Source2005.Size = new System.Drawing.Size(188, 20);
-            this.linkToolkitExamples2Source2005.TabIndex = 17;
-            this.linkToolkitExamples2Source2005.UseMnemonic = false;
-            this.linkToolkitExamples2Source2005.Values.Text = "Example Source Code - Toolkit II";
-            this.linkToolkitExamples2Source2005.LinkClicked += new System.EventHandler(this.linkToolkitExamples2Source2005_LinkClicked);
-            // 
-            // linkDockingExamplesSource2005
-            // 
-            this.linkDockingExamplesSource2005.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
-            this.linkDockingExamplesSource2005.Location = new System.Drawing.Point(240, 48);
-            this.linkDockingExamplesSource2005.Name = "linkDockingExamplesSource2005";
-            this.linkDockingExamplesSource2005.Size = new System.Drawing.Size(186, 20);
-            this.linkDockingExamplesSource2005.TabIndex = 18;
-            this.linkDockingExamplesSource2005.UseMnemonic = false;
-            this.linkDockingExamplesSource2005.Values.Text = "Example Source Code - Docking";
-            this.linkDockingExamplesSource2005.LinkClicked += new System.EventHandler(this.linkDockingExamplesSource2005_LinkClicked);
-            // 
-            // linkToolkitExamplesSource2005
-            // 
-            this.linkToolkitExamplesSource2005.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
-            this.linkToolkitExamplesSource2005.Location = new System.Drawing.Point(240, 8);
-            this.linkToolkitExamplesSource2005.Name = "linkToolkitExamplesSource2005";
-            this.linkToolkitExamplesSource2005.Size = new System.Drawing.Size(184, 20);
-            this.linkToolkitExamplesSource2005.TabIndex = 16;
-            this.linkToolkitExamplesSource2005.UseMnemonic = false;
-            this.linkToolkitExamplesSource2005.Values.Text = "Example Source Code - Toolkit I ";
-            this.linkToolkitExamplesSource2005.LinkClicked += new System.EventHandler(this.linkToolkitExamplesSource2005_LinkClicked);
-            // 
-            // linkNavigatorExamplesSource2005
-            // 
-            this.linkNavigatorExamplesSource2005.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
-            this.linkNavigatorExamplesSource2005.Location = new System.Drawing.Point(240, 88);
-            this.linkNavigatorExamplesSource2005.Name = "linkNavigatorExamplesSource2005";
-            this.linkNavigatorExamplesSource2005.Size = new System.Drawing.Size(194, 20);
-            this.linkNavigatorExamplesSource2005.TabIndex = 20;
-            this.linkNavigatorExamplesSource2005.UseMnemonic = false;
-            this.linkNavigatorExamplesSource2005.Values.Text = "Example Source Code - Navigator";
-            this.linkNavigatorExamplesSource2005.LinkClicked += new System.EventHandler(this.linkNavigatorExamplesSource2005_LinkClicked);
-            // 
-            // linkWorkspaceExamplesSource2005
-            // 
-            this.linkWorkspaceExamplesSource2005.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
-            this.linkWorkspaceExamplesSource2005.Location = new System.Drawing.Point(240, 68);
-            this.linkWorkspaceExamplesSource2005.Name = "linkWorkspaceExamplesSource2005";
-            this.linkWorkspaceExamplesSource2005.Size = new System.Drawing.Size(201, 20);
-            this.linkWorkspaceExamplesSource2005.TabIndex = 19;
-            this.linkWorkspaceExamplesSource2005.UseMnemonic = false;
-            this.linkWorkspaceExamplesSource2005.Values.Text = "Example Source Code - Workspace";
-            this.linkWorkspaceExamplesSource2005.LinkClicked += new System.EventHandler(this.linkWorkspaceExamplesSource2005_LinkClicked);
-            // 
-            // linkRibbonExamplesSource2005
-            // 
-            this.linkRibbonExamplesSource2005.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
-            this.linkRibbonExamplesSource2005.Location = new System.Drawing.Point(240, 108);
-            this.linkRibbonExamplesSource2005.Name = "linkRibbonExamplesSource2005";
-            this.linkRibbonExamplesSource2005.Size = new System.Drawing.Size(180, 20);
-            this.linkRibbonExamplesSource2005.TabIndex = 21;
-            this.linkRibbonExamplesSource2005.UseMnemonic = false;
-            this.linkRibbonExamplesSource2005.Values.Text = "Example Source Code - Ribbon";
-            this.linkRibbonExamplesSource2005.LinkClicked += new System.EventHandler(this.linkRibbonExamplesSource2005_LinkClicked);
             // 
             // linkDockingChangeList
             // 
@@ -2213,24 +1995,14 @@
             this.linkToolkitChangeList.Values.Text = "Change List - Toolkit";
             this.linkToolkitChangeList.LinkClicked += new System.EventHandler(this.linkToolkitChangeList_LinkClicked);
             // 
-            // linkWebsite
-            // 
-            this.linkWebsite.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
-            this.linkWebsite.Location = new System.Drawing.Point(248, 138);
-            this.linkWebsite.Name = "linkWebsite";
-            this.linkWebsite.Size = new System.Drawing.Size(171, 20);
-            this.linkWebsite.TabIndex = 10;
-            this.linkWebsite.Values.Text = "www.ComponentFactory.com";
-            this.linkWebsite.LinkClicked += new System.EventHandler(this.linkWebsite_LinkClicked);
-            // 
             // linkBlog
             // 
             this.linkBlog.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
             this.linkBlog.Location = new System.Drawing.Point(248, 75);
             this.linkBlog.Name = "linkBlog";
-            this.linkBlog.Size = new System.Drawing.Size(35, 20);
+            this.linkBlog.Size = new System.Drawing.Size(49, 20);
             this.linkBlog.TabIndex = 7;
-            this.linkBlog.Values.Text = "Blog";
+            this.linkBlog.Values.Text = "GitHub";
             this.linkBlog.LinkClicked += new System.EventHandler(this.linkBlog_LinkClicked);
             // 
             // linkDocumentation
@@ -2242,106 +2014,6 @@
             this.linkDocumentation.TabIndex = 1;
             this.linkDocumentation.Values.Text = "Documentation";
             this.linkDocumentation.LinkClicked += new System.EventHandler(this.linkDocumentation_LinkClicked);
-            // 
-            // linkScreencasts
-            // 
-            this.linkScreencasts.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
-            this.linkScreencasts.Location = new System.Drawing.Point(248, 117);
-            this.linkScreencasts.Name = "linkScreencasts";
-            this.linkScreencasts.Size = new System.Drawing.Size(74, 20);
-            this.linkScreencasts.TabIndex = 9;
-            this.linkScreencasts.UseMnemonic = false;
-            this.linkScreencasts.Values.Text = "Screencasts";
-            this.linkScreencasts.LinkClicked += new System.EventHandler(this.linkScreencasts_LinkClicked);
-            // 
-            // linkForums
-            // 
-            this.linkForums.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
-            this.linkForums.Location = new System.Drawing.Point(248, 96);
-            this.linkForums.Name = "linkForums";
-            this.linkForums.Size = new System.Drawing.Size(51, 20);
-            this.linkForums.TabIndex = 8;
-            this.linkForums.Values.Text = "Forums";
-            this.linkForums.LinkClicked += new System.EventHandler(this.linkLabelForums_LinkClicked);
-            // 
-            // kryptonPageBuy
-            // 
-            this.kryptonPageBuy.AutoHiddenSlideSize = new System.Drawing.Size(150, 150);
-            this.kryptonPageBuy.Controls.Add(this.linkSuitePurchase);
-            this.kryptonPageBuy.Controls.Add(this.labelBuyNotes);
-            this.kryptonPageBuy.Controls.Add(this.labelBuyNavigator3);
-            this.kryptonPageBuy.Controls.Add(this.labelBuyNavigator2);
-            this.kryptonPageBuy.Controls.Add(this.labelBuyNavigator1);
-            this.kryptonPageBuy.Controls.Add(this.labelBuyPage);
-            this.kryptonPageBuy.Flags = 62;
-            this.kryptonPageBuy.ImageLarge = ((System.Drawing.Image)(resources.GetObject("kryptonPageBuy.ImageLarge")));
-            this.kryptonPageBuy.ImageMedium = ((System.Drawing.Image)(resources.GetObject("kryptonPageBuy.ImageMedium")));
-            this.kryptonPageBuy.LastVisibleSet = true;
-            this.kryptonPageBuy.MinimumSize = new System.Drawing.Size(50, 50);
-            this.kryptonPageBuy.Name = "kryptonPageBuy";
-            this.kryptonPageBuy.Size = new System.Drawing.Size(527, 384);
-            this.kryptonPageBuy.Text = "Buy";
-            this.kryptonPageBuy.TextTitle = "";
-            this.kryptonPageBuy.ToolTipTitle = "Page ToolTip";
-            this.kryptonPageBuy.UniqueName = "A8DDF8D73FCD4E2AA8DDF8D73FCD4E2A";
-            // 
-            // linkSuitePurchase
-            // 
-            this.linkSuitePurchase.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel;
-            this.linkSuitePurchase.Location = new System.Drawing.Point(32, 56);
-            this.linkSuitePurchase.Name = "linkSuitePurchase";
-            this.linkSuitePurchase.Size = new System.Drawing.Size(171, 29);
-            this.linkSuitePurchase.TabIndex = 0;
-            this.linkSuitePurchase.UseMnemonic = false;
-            this.linkSuitePurchase.Values.Text = "Buy Krypton Suite";
-            this.linkSuitePurchase.LinkClicked += new System.EventHandler(this.linkLabelPurchaseSuite_LinkClicked);
-            // 
-            // labelBuyNotes
-            // 
-            this.labelBuyNotes.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
-            this.labelBuyNotes.Location = new System.Drawing.Point(33, 158);
-            this.labelBuyNotes.Name = "labelBuyNotes";
-            this.labelBuyNotes.Size = new System.Drawing.Size(359, 20);
-            this.labelBuyNotes.TabIndex = 1;
-            this.labelBuyNotes.Values.Text = "*All purchases include 12 months of updates and email support.";
-            // 
-            // labelBuyNavigator3
-            // 
-            this.labelBuyNavigator3.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
-            this.labelBuyNavigator3.Location = new System.Drawing.Point(33, 127);
-            this.labelBuyNavigator3.Name = "labelBuyNavigator3";
-            this.labelBuyNavigator3.Size = new System.Drawing.Size(273, 20);
-            this.labelBuyNavigator3.TabIndex = 2;
-            this.labelBuyNavigator3.Values.Text = "source code in C# is included with the purchase.";
-            // 
-            // labelBuyNavigator2
-            // 
-            this.labelBuyNavigator2.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
-            this.labelBuyNavigator2.Location = new System.Drawing.Point(33, 107);
-            this.labelBuyNavigator2.Name = "labelBuyNavigator2";
-            this.labelBuyNavigator2.Size = new System.Drawing.Size(374, 20);
-            this.labelBuyNavigator2.TabIndex = 3;
-            this.labelBuyNavigator2.Values.Text = "serial key to continue using the Suite commerical components. Full";
-            // 
-            // labelBuyNavigator1
-            // 
-            this.labelBuyNavigator1.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
-            this.labelBuyNavigator1.Location = new System.Drawing.Point(33, 87);
-            this.labelBuyNavigator1.Name = "labelBuyNavigator1";
-            this.labelBuyNavigator1.Size = new System.Drawing.Size(376, 20);
-            this.labelBuyNavigator1.TabIndex = 4;
-            this.labelBuyNavigator1.Values.Text = "After the 30 day evaluation period expires you can use a purchased";
-            // 
-            // labelBuyPage
-            // 
-            this.labelBuyPage.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel;
-            this.labelBuyPage.Location = new System.Drawing.Point(12, 12);
-            this.labelBuyPage.Name = "labelBuyPage";
-            this.labelBuyPage.Size = new System.Drawing.Size(54, 28);
-            this.labelBuyPage.StateCommon.ShortText.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBuyPage.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
-            this.labelBuyPage.TabIndex = 5;
-            this.labelBuyPage.Values.Text = "Buy";
             // 
             // kryptonButtonClose
             // 
@@ -2375,7 +2047,7 @@
             this.labelKryptonExplorer.StateCommon.ShortText.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelKryptonExplorer.StateCommon.ShortText.Hint = ComponentFactory.Krypton.Toolkit.PaletteTextHint.AntiAlias;
             this.labelKryptonExplorer.TabIndex = 0;
-            this.labelKryptonExplorer.Values.Text = "Krypton 4.4.0";
+            this.labelKryptonExplorer.Values.Text = "Krypton 4.4.1";
             // 
             // pictureBoxRight
             // 
@@ -2459,15 +2131,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage6)).EndInit();
             this.kryptonPage6.ResumeLayout(false);
             this.kryptonPage6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPage4)).EndInit();
-            this.kryptonPage4.ResumeLayout(false);
-            this.kryptonPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPage5)).EndInit();
-            this.kryptonPage5.ResumeLayout(false);
-            this.kryptonPage5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPageBuy)).EndInit();
-            this.kryptonPageBuy.ResumeLayout(false);
-            this.kryptonPageBuy.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanelTop)).EndInit();
             this.kryptonPanelTop.ResumeLayout(false);
             this.kryptonPanelTop.PerformLayout();
@@ -2498,16 +2161,12 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkKryptonGroup;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel labelResourcesInstalled;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkBlog;
-        private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkWebsite;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkThreePaneApplicationBasic;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkDocumentation;
-        private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkScreencasts;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkKryptonCheckButton;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkKryptonCheckSet;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkThreePaneApplicationExtended;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkPaletteDesigner;
-        private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkToolkitExamplesSource2008;
-        private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkForums;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel labelApplications;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkExpandingHeaderGroupsSplitters;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkLabelButtonSpecPlayground;
@@ -2517,13 +2176,11 @@
         private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPageNavigator;
         private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPageApplicatons;
         private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPageResources;
-        private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPageBuy;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel labelResourcesInternet;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel labeToolkitPage;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel labelNavigatorPage;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel labelApplicationsPage;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel labelResourcesPage;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel labelBuyPage;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkPaletteUpgradeTool;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkExpandingHeaderGroupsDockStyle;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkKryptonLinkLabel;
@@ -2535,11 +2192,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLabel labelNavigatorFeatureExamples;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkOrientationAndAlignment;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkNavigatorPalettes;
-        private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkNavigatorExamplesSource2008;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel labelBuyNavigator2;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel labelBuyNavigator1;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel labelBuyNavigator3;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel labelBuyNotes;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkNavigatorChangeList;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkExpandingHeaderStack;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkChildControlStack;
@@ -2561,8 +2213,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkOutlookMailClone;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkKeyTipsTabs;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkContextualTabs;
-        private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkSuitePurchase;
-        private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkRibbonExamplesSource2008;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkRibbonChangeList;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkQuickAccessToolbar;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkAutoShrinkingGroups;
@@ -2611,11 +2261,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkRibbonMemoEditor;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkWorkspaceMemoEditor;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkWorkspaceChangeList;
-        private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkWorkspaceExamplesSource2008;
-        private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkWorkspaceExamplesSource2005;
-        private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkRibbonExamplesSource2005;
-        private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkNavigatorExamplesSource2005;
-        private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkToolkitExamplesSource2005;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkKryptonDomainUpDown;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel kryptonLinkLabel2;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel kryptonLinkLabel1;
@@ -2628,14 +2273,11 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel3;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
-        private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkDockingExamplesSource2005;
-        private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkDockingExamplesSource2008;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkDockingChangeList;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkMultiControlDocking;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkDockingPersistence;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkDockingFlags;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkDockingCustomized;
-        private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkSerialKeys;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkKryptonWrapLabel;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkNavigatorAndFloatingWindows;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel LinkNavigatorAndFloatingWindows2;
@@ -2647,8 +2289,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkDockingExamplesSource2010;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkRibbonExamplesSource2010;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkNavigatorExamplesSource2010;
-        private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage4;
-        private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage5;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkKryptobTrackBar;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkExternalDragToDocking;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkKryptonMessageBox;
@@ -2656,8 +2296,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkKryptonInputBox;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkKryptonTreeView;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkToolkitExamples2Source2010;
-        private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkToolkitExamples2Source2008;
-        private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel linkToolkitExamples2Source2005;
     }
 }
 
